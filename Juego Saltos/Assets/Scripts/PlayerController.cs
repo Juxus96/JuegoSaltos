@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpLenght;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float onWallGravityMul;
+    [SerializeField] private Transform spawnPoint;
 
     [SerializeField] private float playerHeight;
     [SerializeField] private LayerMask groundLayerMask;
@@ -31,10 +32,11 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void ResetPlayer()
+    public void ResetPlayer()
     {
         moving = false;
         direction = 1;
+        transform.position = spawnPoint.position;
     }
 
     void Update()
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
             if (onWall)
                 onWall = false;
 
-            print(transform.position.x);
+            //print(transform.position.x);
 
             currentVerticalForce = jumpForce;
             jumping = true;
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
             canJump = true;
             jumping = false;
             currentVerticalForce = 0;
-            print(transform.position.x);
+            //print(transform.position.x);
         }
 
     }
