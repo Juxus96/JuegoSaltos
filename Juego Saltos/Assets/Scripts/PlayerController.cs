@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private float speed;
-    [SerializeField] private float jumpingSpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpLenght;
+    [SerializeField] private float jumpHeight;
+    [SerializeField] private float onWallGravityMul;
+
     [SerializeField] private float playerHeight;
-    [SerializeField] private float onWallGravityScale;
     [SerializeField] private LayerMask groundLayerMask;
 
 
@@ -18,13 +19,16 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
     private bool jumping;
     private bool canJump;
-    private Rigidbody2D rb2D;
     private bool onWall;
+    private float jumpForce;
+    private float currentVerticalForce;
+    private float normalGravity;
 
     private void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>();
         ResetPlayer();
+        normalGravity = jumpForce = jumpHeight * 4;
+        
     }
 
     private void ResetPlayer()
@@ -38,11 +42,32 @@ public class PlayerController : MonoBehaviour
         GroundCheck();
         if(moving)
         {
+            Vector3 movDirection = Vector3.zero;
             if(Input.GetMouseButtonDown(0))
                 Jump();
-        
-            if(!onWall)
-                transform.Translate(Vector3.right * direction * (jumping? jumpingSpeed : speed) * Time.deltaTime);
+
+            if (onWall)
+            {
+                movDirection += Vector3.down * onWallGravityMul * normalGravity * Time.deltaTime;
+            }
+            else
+            {
+                movDirection += Vector3.right * direction * (jumping ? jumpLenght : speed) * Time.deltaTime;
+                if (!grounded || jumping)
+                {
+                    movDirection += Vector3.up * currentVerticalForce * Time.deltaTime;
+                    if (!grounded)
+                        currentVerticalForce -= 2 * normalGravity * Time.deltaTime;
+
+                    //if (!grounded && currentVerticalForce <= 0)
+                    //    print(4.2 + transform.position.y);
+
+
+                }
+
+            }
+            transform.Translate(movDirection);
+
         }
         else
         {
@@ -60,11 +85,11 @@ public class PlayerController : MonoBehaviour
             if (onWall)
                 onWall = false;
 
-            rb2D.Sleep();
-            rb2D.AddForce(Vector3.up * jumpForce);
+            print(transform.position.x);
+
+            currentVerticalForce = jumpForce;
             jumping = true;
             canJump = false;
-            print(transform.position);
         }
     }
 
@@ -77,7 +102,6 @@ public class PlayerController : MonoBehaviour
             {
                 onWall = true;
                 canJump = true;
-                rb2D.gravityScale = onWallGravityScale;
             }
         }
 
@@ -88,7 +112,6 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.CompareTag("Wall"))
         {
             onWall = false;
-            rb2D.gravityScale = 1;
         }
     }
 
@@ -107,9 +130,10 @@ public class PlayerController : MonoBehaviour
 
         if(!prevGrounded && grounded)
         {
-            print(transform.position);
             canJump = true;
             jumping = false;
+            currentVerticalForce = 0;
+            print(transform.position.x);
         }
 
     }
