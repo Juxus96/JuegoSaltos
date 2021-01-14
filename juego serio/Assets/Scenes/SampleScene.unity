@@ -1799,13 +1799,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 444ff330a09895442aee6e87f990fd1c, type: 3}
+  m_SortingOrder: 100
+  m_Sprite: {fileID: 21300000, guid: 606d9fc21ce45104bb73fa168c1348d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.82, y: 8.05}
+  m_Size: {x: 0.75, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1819,7 +1819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638432398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1820904019}
@@ -1838,7 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f54305ac8ad8a4190c2dd10f1794f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetCubes: {x: 0.7, y: 0.2}
+  distanceBetCubes: {x: 0.61, y: 0.3}
 --- !u!114 &638432402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5336,7 +5336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 52.641, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1.872}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 3000, y: 6000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820904020
