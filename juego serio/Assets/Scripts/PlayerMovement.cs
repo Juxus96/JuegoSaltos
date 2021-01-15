@@ -11,16 +11,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction;
     private Vector3 targetDir;
     private Vector3 targetPos;
+    private bool playerTurn = true;
 
-    /// <summary>
-    /// Suscribe to movement events
-    /// </summary>
     private void Start()
     {
-        EventManager.instance.SuscribeToEvent("Input_W", () => { if (!CanMove()) SetDirectionW(); });
-        EventManager.instance.SuscribeToEvent("Input_A", () => { if (!CanMove()) SetDirectionA(); });
-        EventManager.instance.SuscribeToEvent("Input_S", () => { if (!CanMove()) SetDirectionS(); });
-        EventManager.instance.SuscribeToEvent("Input_D", () => { if (!CanMove()) SetDirectionD(); });
+        EventManager.instance.SuscribeToEvent("PlayerTurn", () => { playerTurn = true; });
+        EventManager.instance.SuscribeToEvent("LightMoving", () => { playerTurn = false; });
+        EventManager.instance.SuscribeToEvent("LightMoved",(Vector2 v, int i) => { CheckMove(); });
+        EventManager.instance.SuscribeToEvent("Input_W", () => { if (CanMove()) SetDirectionW(); });
+        EventManager.instance.SuscribeToEvent("Input_A", () => { if (CanMove()) SetDirectionA(); });
+        EventManager.instance.SuscribeToEvent("Input_S", () => { if (CanMove()) SetDirectionS(); });
+        EventManager.instance.SuscribeToEvent("Input_D", () => { if (CanMove()) SetDirectionD(); });
     }
 
     private void Update()
@@ -29,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Move();
         }
+    }
+
+    private void CheckMove()
+    {
+        EventManager.instance.RaiseEvent("PlayerMoved", transform.position);
     }
 
     private void Move()
@@ -42,14 +48,15 @@ public class PlayerMovement : MonoBehaviour
             targetDir = Vector3.zero;
             targetPos = Vector3.zero;
             direction = Vector2.zero;
-            EventManager.instance.RaiseEvent("PlayerCanWalk");
+            EventManager.instance.RaiseEvent("PlayerMoved", transform.position);
+            EventManager.instance.RaiseEvent("PlayerAction");
         }
     }
 
     // TO-DO ADD RAYCASTS FOR WALLS
     private bool CanMove()
     {
-        return targetDir != Vector3.zero;
+        return playerTurn || targetDir != Vector3.zero;
     }
     
     public void SetDirectionW()
@@ -75,13 +82,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetTargetDir()
     {
+        playerTurn = false;
         targetDir.x = direction.x * distanceBetCubes.x;
         targetDir.y = direction.y * distanceBetCubes.y;
 
         targetPos = transform.position + targetDir;
         targetDir.Normalize();
 
-        EventManager.instance.RaiseEvent("PlayerCantWalk");
+        EventManager.instance.RaiseEvent("DisableVisual");
 
     }
 }

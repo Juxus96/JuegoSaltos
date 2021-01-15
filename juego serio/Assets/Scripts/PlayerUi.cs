@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class PlayerUi : MonoBehaviour
 {
-    [SerializeField] private GameObject[] arrows;
+    [SerializeField] private GameObject[] playerArrows;
+    [SerializeField] private GameObject[] lightArrows;
 
     private void Start()
     {
-        EventManager.instance.SuscribeToEvent("PlayerCanWalk", EnableArrows);
-        EventManager.instance.SuscribeToEvent("PlayerCantWalk",DisableArrows);
+        EventManager.instance.SuscribeToEvent("PlayerTurn", () => { EnablePlayerArrows(); DisableLightArrows(); });
+        EventManager.instance.SuscribeToEvent("DisableVisual", () => { DisablePlayerArrows(); DisableLightArrows(); });
+        EventManager.instance.SuscribeToEvent("LightMoving", () => { DisablePlayerArrows(); EnableLightArrows(); });
     }
 
-    private void EnableArrows()
+    private void EnablePlayerArrows()
     {
-        for (int i = 0; i < arrows.Length; i++)
+        for (int i = 0; i < playerArrows.Length; i++)
         {
-            arrows[i].SetActive(true);
+            playerArrows[i].SetActive(true);
         }
     }
 
-    private void DisableArrows()
+    private void DisablePlayerArrows()
     {
-        for (int i = 0; i < arrows.Length; i++)
+        for (int i = 0; i < lightArrows.Length; i++)
         {
-            arrows[i].SetActive(false);
+            playerArrows[i].SetActive(false);
+        }
+    }private void EnableLightArrows()
+    {
+        for (int i = 0; i < playerArrows.Length; i++)
+        {
+            lightArrows[i].SetActive(true);
+        }
+    }
+
+    private void DisableLightArrows()
+    {
+        for (int i = 0; i < lightArrows.Length; i++)
+        {
+            lightArrows[i].SetActive(false);
         }
     }
 }
