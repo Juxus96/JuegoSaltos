@@ -38,18 +38,18 @@ public class LevelManager : MonoBehaviour
             EventManager.instance.RaiseEvent("PlayerTurn");
         }
 
-        if(Input.GetKeyDown(KeyCode.M) && !enemyTurn)
-        {
-            if (playerMoving)
-            {
-                EventManager.instance.RaiseEvent("LightMoving");
-                playerMoving = false;
-            }
-            else
-            {
-                EventManager.instance.RaiseEvent("PlayerTurn");
-                playerMoving = true;
-            }
-        }
+        //if(Input.GetKeyDown(KeyCode.M) && !enemyTurn)
+        //{
+        //    if (playerMoving)
+        //    {
+        //        EventManager.instance.RaiseEvent("LightCanMove");
+        //        playerMoving = false;
+        //    }
+        //    else
+        //    {
+        //        EventManager.instance.RaiseEvent("PlayerTurn");
+        //        playerMoving = true;
+        //    }
+        //}
     }
 }

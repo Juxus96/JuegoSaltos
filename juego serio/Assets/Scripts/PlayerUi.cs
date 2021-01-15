@@ -9,9 +9,10 @@ public class PlayerUi : MonoBehaviour
 
     private void Start()
     {
+        EventManager.instance.SuscribeToEvent("PlayerAction", () => DisableAll());
+        EventManager.instance.SuscribeToEvent("DisableVisual", () => DisableAll());
         EventManager.instance.SuscribeToEvent("PlayerTurn", () => { EnablePlayerArrows(); DisableLightArrows(); });
-        EventManager.instance.SuscribeToEvent("DisableVisual", () => { DisablePlayerArrows(); DisableLightArrows(); });
-        EventManager.instance.SuscribeToEvent("LightMoving", () => { DisablePlayerArrows(); EnableLightArrows(); });
+        EventManager.instance.SuscribeToEvent("LightTurn", () => { DisablePlayerArrows(); EnableLightArrows(); });
     }
 
     private void EnablePlayerArrows()
@@ -42,5 +43,11 @@ public class PlayerUi : MonoBehaviour
         {
             lightArrows[i].SetActive(false);
         }
+    }
+
+    private void DisableAll()
+    {
+        DisablePlayerArrows(); 
+        DisableLightArrows();
     }
 }
