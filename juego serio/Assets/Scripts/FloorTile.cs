@@ -48,7 +48,6 @@ public class FloorTile : MonoBehaviour
 
     public void DoAction()
     {
-        print(transform.name + " " + walkable);
         if (!walkable)
             EventManager.instance.RaiseEvent("PlayerDied");
     }

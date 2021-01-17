@@ -11,6 +11,8 @@ public class PlayerUi : MonoBehaviour
     {
         EventManager.instance.SuscribeToEvent("PlayerAction", () => DisableAll());
         EventManager.instance.SuscribeToEvent("DisableVisual", () => DisableAll());
+        EventManager.instance.SuscribeToEvent("PlayerDied", () => { EnablePlayerArrows(); DisableLightArrows(); });
+
         EventManager.instance.SuscribeToEvent("PlayerTurn", () => { EnablePlayerArrows(); DisableLightArrows(); });
         EventManager.instance.SuscribeToEvent("LightTurn", () => { DisablePlayerArrows(); EnableLightArrows(); });
     }

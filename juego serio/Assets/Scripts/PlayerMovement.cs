@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         startPos = lightTransform.position;
 
         EventManager.instance.SuscribeToEvent("PlayerTurn", () => { playerTurn = true; });
+        EventManager.instance.SuscribeToEvent("PlayerDied", () => { lightTurn = false; });
 
         EventManager.instance.SuscribeToEvent("Input_W", () => { if (CanMove()) SetDirectionW(); });
         EventManager.instance.SuscribeToEvent("Input_A", () => { if (CanMove()) SetDirectionA(); });
