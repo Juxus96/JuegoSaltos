@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int lightRadius;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Vector2 distanceBetCubes;
+    [SerializeField] private int maxTurnsInTheDark;
 
+    private int turnsInTheDark;
 
     private Vector2 direction;
     private Vector3 targetDir;
@@ -25,7 +24,9 @@ public class PlayerMovement : MonoBehaviour
         startPos = lightTransform.position;
 
         EventManager.instance.SuscribeToEvent("PlayerTurn", () => { playerTurn = true; });
-        EventManager.instance.SuscribeToEvent("PlayerDied", () => { lightTurn = false; });
+        EventManager.instance.SuscribeToEvent("PlayerInDark", () => PlayerInTheDark());
+        EventManager.instance.SuscribeToEvent("PlayerSafe", () => turnsInTheDark = 0);
+
 
         EventManager.instance.SuscribeToEvent("Input_W", () => { if (CanMove()) SetDirectionW(); });
         EventManager.instance.SuscribeToEvent("Input_A", () => { if (CanMove()) SetDirectionA(); });
@@ -148,5 +149,15 @@ public class PlayerMovement : MonoBehaviour
         // disables the visuals while moving
         EventManager.instance.RaiseEvent("DisableVisual");
 
+    }
+
+    private void PlayerInTheDark()
+    {
+        if(++turnsInTheDark > maxTurnsInTheDark)
+        {
+            EventManager.instance.RaiseEvent("PlayerDied");
+            lightTurn = false;
+            playerTurn = true;
+        }
     }
 }

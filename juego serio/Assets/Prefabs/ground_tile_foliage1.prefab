@@ -95,6 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d25373e8fa1634ba6c2ee82a6c7ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSprite: {fileID: 21300000, guid: 380f4ec1a2d42ad4e852602034dcd356, type: 3}
-  darkSprite: {fileID: 21300000, guid: aceaebcc5f47d3c4780b2c3981a42b2c, type: 3}
-  canProjectLight: 0
+  walkable: 0
+  lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
+  darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
