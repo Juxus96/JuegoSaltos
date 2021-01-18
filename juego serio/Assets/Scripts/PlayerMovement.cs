@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         startPos = lightTransform.position;
 
-        EventManager.instance.SuscribeToEvent("PlayerTurn", () => { playerTurn = true; });
+        EventManager.instance.SuscribeToEvent("PlayerTurn", () => { playerTurn = true; lightTurn = false; });
         EventManager.instance.SuscribeToEvent("PlayerInDark", () => PlayerInTheDark());
         EventManager.instance.SuscribeToEvent("PlayerSafe", () => turnsInTheDark = 0);
 

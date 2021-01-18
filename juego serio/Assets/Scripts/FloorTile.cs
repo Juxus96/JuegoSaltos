@@ -7,20 +7,27 @@ public class FloorTile : MonoBehaviour
     public enum TileState
     {
         LIGHT,
-        DISCOVERED,
         DARK,
     }
     private TileState tileState;
 
     [SerializeField] private bool walkable;
+    [SerializeField] private Sprite assetLight;
+    [SerializeField] private Sprite assetDark;
+    [SerializeField] private SpriteRenderer assetRenderer;
 
-    public Sprite lightSprite; 
-    public Sprite darkSprite;
+    [SerializeField] private Sprite lightSprite; 
+    [SerializeField] private Sprite darkSprite;
     private SpriteRenderer currentSprite;
+
+    private bool discovered;
+    private bool hasAsset;
 
     private void Awake()
     {
         currentSprite = GetComponent<SpriteRenderer>();
+        discovered = false;
+        hasAsset = assetRenderer != null;
         tileState = TileState.DARK;
         UpdateTile();
     }
@@ -36,12 +43,21 @@ public class FloorTile : MonoBehaviour
         if (tileState == TileState.LIGHT)
         {
             walkable = true;
+            discovered = true;
             currentSprite.sprite = lightSprite;
+            if(hasAsset)
+                assetRenderer.sprite = assetLight;
         }
         else
         {
             walkable = false;
             currentSprite.sprite = darkSprite;
+            if (hasAsset)
+                if(discovered)
+                    assetRenderer.sprite = assetDark;
+                else
+                    assetRenderer.sprite = null;
+
         }
 
     }
