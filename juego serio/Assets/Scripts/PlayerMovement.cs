@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Vector2 distanceBetCubes;
     [SerializeField] private int maxTurnsInTheDark;
+    [SerializeField] private float currentOffset;
 
     private int turnsInTheDark;
 
@@ -85,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             (lightTurn ? lightTransform : playerTransform).position = targetPos;
-            direction = targetPos = targetDir = Vector2.zero;
+            direction = targetPos = targetDir = Vector3.zero;
 
 
             moving = false;
@@ -138,21 +139,35 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetTargetDir()
     {
+        moving = true;
         targetDir.x = direction.x * distanceBetCubes.x;
         targetDir.y = direction.y * distanceBetCubes.y;
         targetPos = (lightTurn ? lightTransform : playerTransform).position + targetDir;
 
-        if (EventManager.instance.RaiseFuncEvent("CheckMove", targetPos))
+        if (!EventManager.instance.RaiseFuncEvent("CheckMove", targetPos) && !EventManager.instance.RaiseFuncEvent("CheckMove", targetPos + Vector3.up * currentOffset) && !EventManager.instance.RaiseFuncEvent("CheckMove", targetPos - Vector3.up * currentOffset))
         {
-            moving = false;
+            targetPos = targetDir = Vector2.zero;
+        }
+        else
+        {
+            if(!EventManager.instance.RaiseFuncEvent("CheckMove", targetPos))
+            {
+                if (EventManager.instance.RaiseFuncEvent("CheckMove", targetPos + Vector3.up * currentOffset))
+                {
+                    targetPos += Vector3.up * currentOffset;
+                    targetDir.y += currentOffset;
+                }
+                else if (EventManager.instance.RaiseFuncEvent("CheckMove", targetPos - Vector3.up * currentOffset))
+                {
+                    targetPos -= Vector3.up * currentOffset;
+                    targetDir.y -= currentOffset;
+                }
+            }
+            
             targetDir.Normalize();
 
             // disables the visuals while moving
             EventManager.instance.RaiseEvent("DisableVisual");
-        }
-        else
-        {
-            targetPos = targetDir = Vector2.zero;
         }
 
     }

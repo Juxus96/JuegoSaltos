@@ -67,7 +67,10 @@ public class FloorTile : MonoBehaviour
         if (!walkable)
             EventManager.instance.RaiseEvent("PlayerInDark");
         else
+        {
             EventManager.instance.RaiseEvent("PlayerSafe");
+
+        }
 
     }
 
