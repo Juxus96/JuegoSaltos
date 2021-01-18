@@ -72,9 +72,9 @@ public class PlayerMovement : MonoBehaviour
             }
             if(Input.GetKeyDown(KeyCode.F))
             {
-                print("a");
                 followMode = true;
                 lightTransform.position = playerTransform.position;
+                EventManager.instance.RaiseEvent("PlayerTurn");
                 EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
             }
         }
@@ -197,6 +197,7 @@ public class PlayerMovement : MonoBehaviour
         if(++turnsInTheDark > maxTurnsInTheDark)
         {
             EventManager.instance.RaiseEvent("PlayerDied");
+            turnsInTheDark = 0;
             lightTurn = false;
             playerTurn = true;
         }

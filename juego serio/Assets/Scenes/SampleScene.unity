@@ -3050,11 +3050,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665925640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.29999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 998365726}
+  m_Father: {fileID: 955764096}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &665925642
@@ -4208,7 +4208,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.6, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 665925641}
   m_Father: {fileID: 861242817}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4277,9 +4278,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkable: 0
   stairs: 0
-  assetLight: {fileID: 0}
-  assetDark: {fileID: 0}
-  assetRenderer: {fileID: 0}
+  assetLight: {fileID: 21300000, guid: b0b2ed0f53064a049951a1fbbd796204, type: 3}
+  assetDark: {fileID: 21300000, guid: 23561302ff906424c802ffe2b36cf17f, type: 3}
+  assetRenderer: {fileID: 665925642}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
 --- !u!1 &963194225
@@ -4801,8 +4802,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.6, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 665925641}
+  m_Children: []
   m_Father: {fileID: 861242817}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4871,9 +4871,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkable: 0
   stairs: 0
-  assetLight: {fileID: 21300000, guid: b0b2ed0f53064a049951a1fbbd796204, type: 3}
-  assetDark: {fileID: 21300000, guid: 23561302ff906424c802ffe2b36cf17f, type: 3}
-  assetRenderer: {fileID: 665925642}
+  assetLight: {fileID: 0}
+  assetDark: {fileID: 0}
+  assetRenderer: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
 --- !u!1 &1014068020
