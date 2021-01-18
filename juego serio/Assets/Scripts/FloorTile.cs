@@ -12,6 +12,7 @@ public class FloorTile : MonoBehaviour
     private TileState tileState;
 
     [SerializeField] private bool walkable;
+    public bool stairs;
     [SerializeField] private Sprite assetLight;
     [SerializeField] private Sprite assetDark;
     [SerializeField] private SpriteRenderer assetRenderer;
@@ -31,6 +32,7 @@ public class FloorTile : MonoBehaviour
         tileState = TileState.DARK;
         UpdateTile();
     }
+
 
     public void SetState(TileState newState)
     {

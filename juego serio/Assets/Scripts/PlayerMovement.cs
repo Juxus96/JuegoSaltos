@@ -5,20 +5,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform lightTransform;
     [SerializeField] private int lightRadius;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private Vector2 distanceBetCubes;
+    [SerializeField] private Vector2 offsetBetTiles;
     [SerializeField] private int maxTurnsInTheDark;
-    [SerializeField] private float currentOffset;
+    [SerializeField] private float levelOffset;
 
     private int turnsInTheDark;
 
     private Vector2 direction;
-    private Vector3 targetDir;
-    private Vector3 targetPos;
+    private Vector2 targetDir;
+    private Vector2 targetPos;
     private Vector2 startPos;
 
     private bool playerTurn = true;
     private bool lightTurn = false;
     private bool moving = false;
+    private bool followMode;
 
     private void Start()
     {
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(playerTurn)
         {
-            if (targetDir != Vector3.zero)
+            if (targetDir != Vector2.zero)
             {
                 Move();
             }
@@ -64,9 +65,17 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     lightTurn = true;
+                    followMode = false;
                     EventManager.instance.RaiseEvent("LightTurn");
 
                 }
+            }
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                print("a");
+                followMode = true;
+                lightTransform.position = playerTransform.position;
+                EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
             }
         }
     }
@@ -79,7 +88,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        (lightTurn ? lightTransform : playerTransform).Translate(targetDir * Time.deltaTime);
+        if (lightTurn)
+            lightTransform.position = targetPos;
+        else
+        {
+            playerTransform.Translate(targetDir * Time.deltaTime);
+            if(followMode)
+            {
+                lightTransform.Translate(targetDir * Time.deltaTime);
+            }
+        }
 
         //Reset on reaching the target pos
         if (Vector3.Distance((lightTurn ? lightTransform : playerTransform).position, targetPos) < 0.01f)
@@ -87,8 +105,6 @@ public class PlayerMovement : MonoBehaviour
 
             (lightTurn ? lightTransform : playerTransform).position = targetPos;
             direction = targetPos = targetDir = Vector3.zero;
-
-
             moving = false;
 
             // if the player isnt moving the light end his turn
@@ -96,6 +112,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerTurn = false;
                 EventManager.instance.RaiseEvent("PlayerAction");
+                if(followMode)
+                    EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
+
             }
             else
             {
@@ -140,30 +159,31 @@ public class PlayerMovement : MonoBehaviour
     private void SetTargetDir()
     {
         moving = true;
-        targetDir.x = direction.x * distanceBetCubes.x;
-        targetDir.y = direction.y * distanceBetCubes.y;
-        targetPos = (lightTurn ? lightTransform : playerTransform).position + targetDir;
+        targetDir.x = direction.x * offsetBetTiles.x;
+        targetDir.y = direction.y * offsetBetTiles.y;
+        targetPos = (Vector2)(lightTurn ? lightTransform : playerTransform).position + targetDir;
 
-        if (!EventManager.instance.RaiseFuncEvent("CheckMove", targetPos) && !EventManager.instance.RaiseFuncEvent("CheckMove", targetPos + Vector3.up * currentOffset) && !EventManager.instance.RaiseFuncEvent("CheckMove", targetPos - Vector3.up * currentOffset))
+        bool sameLevelTile = EventManager.instance.RaiseFuncEvent("CheckMove", targetPos);
+        bool stairsUp = EventManager.instance.RaiseFuncEvent("CheckStairs", targetPos + Vector2.up * levelOffset);
+        bool stairsDown = EventManager.instance.RaiseFuncEvent("CheckStairs", targetPos);
+
+        if (!sameLevelTile && !stairsUp && !stairsDown)
         {
             targetPos = targetDir = Vector2.zero;
+            moving = false;
         }
         else
         {
-            if(!EventManager.instance.RaiseFuncEvent("CheckMove", targetPos))
+            if(!sameLevelTile && stairsUp)
             {
-                if (EventManager.instance.RaiseFuncEvent("CheckMove", targetPos + Vector3.up * currentOffset))
-                {
-                    targetPos += Vector3.up * currentOffset;
-                    targetDir.y += currentOffset;
-                }
-                else if (EventManager.instance.RaiseFuncEvent("CheckMove", targetPos - Vector3.up * currentOffset))
-                {
-                    targetPos -= Vector3.up * currentOffset;
-                    targetDir.y -= currentOffset;
-                }
+                targetPos += offsetBetTiles + Vector2.up * offsetBetTiles.y*2;
+                targetDir.y += offsetBetTiles.y;
             }
-            
+            else if(sameLevelTile && stairsDown)
+            {
+                targetPos -= offsetBetTiles + Vector2.up * offsetBetTiles.y*2;
+                targetDir.y -= offsetBetTiles.y;
+            }
             targetDir.Normalize();
 
             // disables the visuals while moving

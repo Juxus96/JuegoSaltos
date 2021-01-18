@@ -13,6 +13,7 @@ public class TileManager : MonoBehaviour
         EventManager.instance.SuscribeToEvent("PlayerMoved", CheckTile);
         EventManager.instance.SuscribeToEvent("LightMoved", UpdateTiles);
         EventManager.instance.SuscribeToFuncEvent("CheckMove", CheckMove);
+        EventManager.instance.SuscribeToFuncEvent("CheckStairs", CheckStairs);
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -56,6 +57,12 @@ public class TileManager : MonoBehaviour
     private bool CheckMove(Vector2 position)
     {
         return GetTileByPos(position) != null;
+    }
+    
+    private bool CheckStairs(Vector2 position)
+    {
+        FloorTile ft = GetTileByPos(position);
+        return ft != null && ft.stairs;
     }
 
 }
