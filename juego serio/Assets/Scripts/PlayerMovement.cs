@@ -85,9 +85,8 @@ public class PlayerMovement : MonoBehaviour
         {
 
             (lightTurn ? lightTransform : playerTransform).position = targetPos;
-            targetDir = Vector3.zero;
-            targetPos = Vector3.zero;
-            direction = Vector2.zero;
+            direction = targetPos = targetDir = Vector2.zero;
+
 
             moving = false;
 
@@ -139,15 +138,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetTargetDir()
     {
-        moving = false;
         targetDir.x = direction.x * distanceBetCubes.x;
         targetDir.y = direction.y * distanceBetCubes.y;
-
         targetPos = (lightTurn ? lightTransform : playerTransform).position + targetDir;
-        targetDir.Normalize();
 
-        // disables the visuals while moving
-        EventManager.instance.RaiseEvent("DisableVisual");
+        if (EventManager.instance.RaiseFuncEvent("CheckMove", targetPos))
+        {
+            moving = false;
+            targetDir.Normalize();
+
+            // disables the visuals while moving
+            EventManager.instance.RaiseEvent("DisableVisual");
+        }
+        else
+        {
+            targetPos = targetDir = Vector2.zero;
+        }
 
     }
 

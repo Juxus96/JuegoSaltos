@@ -12,6 +12,8 @@ public class EventManager : MonoBehaviour
     private Dictionary<string, Action<Vector2>> vector2Action;
     private Dictionary<string, Action<Vector2, int>> vector2IntAction;
 
+    private Dictionary<string, Func<Vector2, bool>> vector2FuncBool;
+
     private void Awake()
     {
         CreateSingleton();
@@ -19,6 +21,7 @@ public class EventManager : MonoBehaviour
         intAction = new Dictionary<string, Action<int>>();
         vector2Action = new Dictionary<string, Action<Vector2>>();
         vector2IntAction = new Dictionary<string, Action<Vector2, int>>();
+        vector2FuncBool = new Dictionary<string, Func<Vector2, bool>>();
     }
 
     #region Void Action
@@ -26,9 +29,10 @@ public class EventManager : MonoBehaviour
     {
         if (!voidAction.ContainsKey(key))
         {
-            voidAction.Add(key, () => { });
+            voidAction.Add(key, answer);
         }
-        voidAction[key] += answer;
+        else
+            voidAction[key] += answer;
 
     }
 
@@ -49,9 +53,10 @@ public class EventManager : MonoBehaviour
     {
         if (!intAction.ContainsKey(key))
         {
-            intAction.Add(key, (int i) => { });
+            intAction.Add(key, answer);
         }
-        intAction[key] += answer;
+        else
+            intAction[key] += answer;
 
     }
 
@@ -72,9 +77,10 @@ public class EventManager : MonoBehaviour
     {
         if (!vector2Action.ContainsKey(key))
         {
-            vector2Action.Add(key, (Vector2 v) => { });
+            vector2Action.Add(key, answer);
         }
-        vector2Action[key] += answer;
+        else
+            vector2Action[key] += answer;
 
     }
 
@@ -95,9 +101,10 @@ public class EventManager : MonoBehaviour
     {
         if (!vector2IntAction.ContainsKey(key))
         {
-            vector2IntAction.Add(key, (Vector2 v, int i) => { });
+            vector2IntAction.Add(key, answer);
         }
-        vector2IntAction[key] += answer;
+        else 
+            vector2IntAction[key] += answer;
 
     }
 
@@ -113,6 +120,31 @@ public class EventManager : MonoBehaviour
     }
     #endregion
 
+    #region Vector2 Func Bool
+    public void SuscribeToFuncEvent(string key, Func<Vector2, bool> answer)
+    {
+        if (!vector2FuncBool.ContainsKey(key))
+        {
+            vector2FuncBool.Add(key, answer);
+        }
+        else
+            vector2FuncBool[key] += answer;
+    }
+
+    public void UnsuscribeFromFuncEvent(string key, Func<Vector2, bool> answer)
+    {
+        if (vector2FuncBool.ContainsKey(key))
+            vector2FuncBool[key] -= answer;
+    }
+
+    public bool RaiseFuncEvent(string key, Vector2 vector2)
+    {
+        if (vector2FuncBool != null)
+            return vector2FuncBool[key](vector2);
+        else
+            return false;
+    }
+    #endregion
     private void CreateSingleton()
     {
         if (instance != null)
