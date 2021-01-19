@@ -13,7 +13,7 @@ public class MovementData : ScriptableObject
 
     [HideInInspector] public bool canMoveW;
     [HideInInspector] public bool canMoveA;
-    [HideInInspector] public bool canMoveS;
+    public bool canMoveS;
     [HideInInspector] public bool canMoveD;
 
     public readonly static Vector2 OffsetBetTiles = new Vector2(0.6f, 0.3f);
@@ -26,15 +26,15 @@ public class MovementData : ScriptableObject
     public void Init(Transform mTransform)
     {
         movingTransform = mTransform;
-        EventManager.instance.SuscribeToEvent("MovementUpdate",MovementUpdate);
+        EventManager.instance.SuscribeToEvent("MovementUpdate", MovementUpdate);
     }
 
     private void MovementUpdate()
     {
-        canMoveW = EventManager.instance.RaiseFuncEvent("CheckTile", (Vector2)movingTransform.position + WDirection * OffsetBetTiles);
-        canMoveA = EventManager.instance.RaiseFuncEvent("CheckTile", (Vector2)movingTransform.position + ADirection * OffsetBetTiles);
-        canMoveS = EventManager.instance.RaiseFuncEvent("CheckTile", (Vector2)movingTransform.position + SDirection * OffsetBetTiles);
-        canMoveD = EventManager.instance.RaiseFuncEvent("CheckTile", (Vector2)movingTransform.position + DDirection * OffsetBetTiles);
+        canMoveW = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, WDirection * OffsetBetTiles);
+        canMoveA = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, ADirection * OffsetBetTiles);
+        canMoveS = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, SDirection * OffsetBetTiles);
+        canMoveD = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, DDirection * OffsetBetTiles);
     }
 
 }

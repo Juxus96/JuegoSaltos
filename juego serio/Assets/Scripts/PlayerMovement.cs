@@ -101,8 +101,12 @@ public class PlayerMovement : MonoBehaviour
         if (Vector3.Distance((lightTurn ? lightTransform : playerTransform).position, targetPos) < 0.01f)
         {
 
+            EventManager.instance.RaiseEvent("MovementUpdate");
+
+
             (lightTurn ? lightTransform : playerTransform).position = targetPos;
             targetPos = targetDir = Vector3.zero;
+
 
             // if the player isnt moving the light end his turn
             if(!lightTurn)
@@ -122,28 +126,27 @@ public class PlayerMovement : MonoBehaviour
                 EventManager.instance.RaiseEvent("UpdateLight");
             }
 
-            EventManager.instance.RaiseEvent("MovementUpdate");
         }
     }
     
     public void SetDirectionW()
     {
-        if(playerMoveData.canMoveW)
+        if ((lightTurn ? lightMoveData : playerMoveData).canMoveW)
             SetTargetDir(MovementData.WDirection);
     }
     public void SetDirectionA()
     {
-        if(playerMoveData.canMoveW)
+        if((lightTurn ? lightMoveData : playerMoveData).canMoveA)
             SetTargetDir(MovementData.ADirection);
     }
     public void SetDirectionS()
     {
-        if(playerMoveData.canMoveW)
+        if((lightTurn ? lightMoveData : playerMoveData).canMoveS)
             SetTargetDir(MovementData.SDirection);
     }
     public void SetDirectionD()
     {
-        if(playerMoveData.canMoveW)
+        if((lightTurn ? lightMoveData : playerMoveData).canMoveD)
             SetTargetDir(MovementData.DDirection);
     }
 
@@ -151,8 +154,9 @@ public class PlayerMovement : MonoBehaviour
     {
         targetDir.x = direction.x * MovementData.OffsetBetTiles.x;
         targetDir.y = direction.y * MovementData.OffsetBetTiles.y;
-        targetPos = (Vector2)(lightTurn ? lightTransform : playerTransform).position + targetDir;
 
+        targetPos = (Vector2)(lightTurn ? lightTransform : playerTransform).position + targetDir;
+        
         targetDir.Normalize();
 
         // disables the visuals while moving

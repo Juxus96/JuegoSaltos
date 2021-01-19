@@ -4,11 +4,11 @@ using UnityEngine;
 
 public abstract class AssetData : ScriptableObject
 {
-
+    public string assetName;
     public Sprite assetLight;
     public Sprite assetDark;
 
-    public float offset;
+    public float assetOffset;
 
     public abstract void DoAction();
 

@@ -4,35 +4,46 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    private List<FloorTile> allTiles;
-    private List<FloorTile> tilesToUpdate;
-    private List<FloorTile> oldTiles;
+    [SerializeField] private float offsetBetLayers;
+    [SerializeField] private Vector2 GridSize;
 
-    [SerializeField] private Vector2 offesetBetTiles;
+    private List<Tile> allTiles;
+    private List<Tile> tilesToUpdate;
+    private List<Tile> oldTiles;
+
     private void Start()
     {
-        allTiles = new List<FloorTile>();
-        tilesToUpdate = new List<FloorTile>();
-        oldTiles = new List<FloorTile>();
-        //EventManager.instance.SuscribeToEvent("MovementUpdate", CheckTile);
+        allTiles = new List<Tile>();
+        tilesToUpdate = new List<Tile>();
+        oldTiles = new List<Tile>();
+
         EventManager.instance.SuscribeToEvent("UpdateLight", UpdateLight);
         EventManager.instance.SuscribeToEvent("LightMoved", PointLightMoved);
-        EventManager.instance.SuscribeToFuncEvent("CheckTile", CheckTile);
+        EventManager.instance.SuscribeToBoolEvent("CheckTileMovement", CheckTileToMove);
+        EventManager.instance.SuscribeToVect2Event("GetTilePos", GetTIlePos);
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            allTiles.Add(transform.GetChild(i).GetComponent<FloorTile>());
+            allTiles.Add(Instantiate(new GameObject("Tile")).GetComponent<Tile>());
         }
     }
 
-
-    private bool CheckTile(Vector2 position)
+    private Vector2 GetTIlePos(Vector2 tilePos)
     {
-        return GetTileByPos(position) != null;
+        return Vector2.zero;
+    }
+
+    // Changes the boolean in the movement data
+    private bool CheckTileToMove(Vector2 position, Vector2 direction)
+    {
+        Tile tile = GetTileByPos(position + direction);
+        Tile stair = GetTileByPos(position + direction + Vector2.up * offsetBetLayers);
+
+        return tile != null && tile.Walkable(position) || stair != null && stair.GetType() == typeof(StairTile) && stair.Walkable(position);
     }
 
 
-    private FloorTile GetTileByPos(Vector2 pos)
+    private Tile GetTileByPos(Vector2 pos)
     {
         int i = 0;
         for (; i < allTiles.Count && Vector2.Distance(allTiles[i].transform.position, pos) > 0.01f; i++) ;
@@ -42,14 +53,14 @@ public class TileManager : MonoBehaviour
 
     private void UpdateTiles()
     {
-        foreach(FloorTile ft in oldTiles)
+        foreach(Tile ft in oldTiles)
         {
-            ft.SetState(FloorTile.TileState.DARK);
+            ft.SetState(Tile.TileState.DARK);
         }
 
-        foreach (FloorTile ft in tilesToUpdate)
+        foreach (Tile ft in tilesToUpdate)
         {
-            ft.SetState(FloorTile.TileState.LIGHT);
+            ft.SetState(Tile.TileState.LIGHT);
         }
     }
 
@@ -60,10 +71,10 @@ public class TileManager : MonoBehaviour
         {
             for (int j = radius - i; j > 0 ; j--)
             {
-                FloorTile wDirectionTile = GetTileByPos(position + Vector2.up * offesetBetTiles * (j + i) - Vector2.right * offesetBetTiles * (j - i));
-                FloorTile aDirectionTile = GetTileByPos(position - Vector2.up * offesetBetTiles * (j + i) + Vector2.right * offesetBetTiles * (j - i));
-                FloorTile sDirectionTile = GetTileByPos(position - Vector2.up * offesetBetTiles * (j - i) - Vector2.right * offesetBetTiles * (j + i));
-                FloorTile dDirectionTile = GetTileByPos(position + Vector2.up * offesetBetTiles * (j - i) + Vector2.right * offesetBetTiles * (j + i));
+                Tile wDirectionTile = GetTileByPos(position + Vector2.up * MovementData.OffsetBetTiles.y * (j + i) - Vector2.right * MovementData.OffsetBetTiles.x * (j - i));
+                Tile aDirectionTile = GetTileByPos(position - Vector2.up * MovementData.OffsetBetTiles.y * (j + i) + Vector2.right * MovementData.OffsetBetTiles.x * (j - i));
+                Tile sDirectionTile = GetTileByPos(position - Vector2.up * MovementData.OffsetBetTiles.y * (j - i) - Vector2.right * MovementData.OffsetBetTiles.x * (j + i));
+                Tile dDirectionTile = GetTileByPos(position + Vector2.up * MovementData.OffsetBetTiles.y * (j - i) + Vector2.right * MovementData.OffsetBetTiles.x * (j + i));
 
                 if (wDirectionTile != null)
                     tilesToUpdate.Add(wDirectionTile);
@@ -81,7 +92,7 @@ public class TileManager : MonoBehaviour
 
     private void UpdateLight()
     {
-        oldTiles = new List<FloorTile>(tilesToUpdate);
+        oldTiles = new List<Tile>(tilesToUpdate);
         tilesToUpdate.Clear();
         EventManager.instance.RaiseEvent("GetLights");
     }

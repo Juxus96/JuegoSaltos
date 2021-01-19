@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
         player.position = startPos;
         EventManager.instance.RaiseEvent("UpdateLight");
         EventManager.instance.RaiseEvent("MovementUpdate");
+        EventManager.instance.RaiseEvent("PlayerTurn");
 
     }
 
