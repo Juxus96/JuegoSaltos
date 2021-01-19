@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    private List<FloorTile> tiles;
+    private List<FloorTile> allTiles;
+    private List<FloorTile> tilesToUpdate;
+    private List<FloorTile> oldTiles;
 
-    [SerializeField] private Vector2 distanceBetTiles;
+    [SerializeField] private Vector2 offesetBetTiles;
     private void Start()
     {
-        tiles = new List<FloorTile>();
+        allTiles = new List<FloorTile>();
+        tilesToUpdate = new List<FloorTile>();
+        oldTiles = new List<FloorTile>();
         EventManager.instance.SuscribeToEvent("PlayerMoved", CheckTile);
-        EventManager.instance.SuscribeToEvent("LightMoved", UpdateTiles);
+        EventManager.instance.SuscribeToEvent("UpdateLight", UpdateLight);
+        EventManager.instance.SuscribeToEvent("LightMoved", PointLightMoved);
         EventManager.instance.SuscribeToFuncEvent("CheckMove", CheckMove);
         EventManager.instance.SuscribeToFuncEvent("CheckStairs", CheckStairs);
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            tiles.Add(transform.GetChild(i).GetComponent<FloorTile>());
+            allTiles.Add(transform.GetChild(i).GetComponent<FloorTile>());
         }
-        
     }
 
 
@@ -28,30 +32,59 @@ public class TileManager : MonoBehaviour
         GetTileByPos(position).DoAction();
     }
 
+
     private FloorTile GetTileByPos(Vector2 pos)
     {
         int i = 0;
-        for (; i < tiles.Count && Vector2.Distance(tiles[i].transform.position, pos) > 0.01f; i++) ;
-        return i < tiles.Count ? tiles[i] : null;
+        for (; i < allTiles.Count && Vector2.Distance(allTiles[i].transform.position, pos) > 0.01f; i++) ;
+        return i < allTiles.Count ? allTiles[i] : null;
        
     }
 
-    private void UpdateTiles(Vector2 position, int radius)
+    private void UpdateTiles()
     {
-        for (int i = 0; i < tiles.Count; i++)
+        foreach(FloorTile ft in oldTiles)
         {
-            if(Mathf.Abs(position.x - tiles[i].transform.position.x) - distanceBetTiles.x * radius <= 0.1f
-                && Mathf.Abs(position.y -tiles[i].transform.position.y) - distanceBetTiles.y * radius <= 0.1f)
-            {
-                tiles[i].SetState(FloorTile.TileState.LIGHT);
-
-            }
-            else
-            {
-                tiles[i].SetState(FloorTile.TileState.DARK);
-            }
-
+            ft.SetState(FloorTile.TileState.DARK);
         }
+
+        foreach (FloorTile ft in tilesToUpdate)
+        {
+            ft.SetState(FloorTile.TileState.LIGHT);
+        }
+    }
+
+    private void PointLightMoved(Vector2 position, int radius)
+    {
+        tilesToUpdate.Add(GetTileByPos(position));
+        for (int i = 0; i < radius; i++)
+        {
+            for (int j = radius - i; j > 0 ; j--)
+            {
+                FloorTile wDirectionTile = GetTileByPos(position + Vector2.up * offesetBetTiles * (j + i) - Vector2.right * offesetBetTiles * (j - i));
+                FloorTile aDirectionTile = GetTileByPos(position - Vector2.up * offesetBetTiles * (j + i) + Vector2.right * offesetBetTiles * (j - i));
+                FloorTile sDirectionTile = GetTileByPos(position - Vector2.up * offesetBetTiles * (j - i) - Vector2.right * offesetBetTiles * (j + i));
+                FloorTile dDirectionTile = GetTileByPos(position + Vector2.up * offesetBetTiles * (j - i) + Vector2.right * offesetBetTiles * (j + i));
+
+                if (wDirectionTile != null)
+                    tilesToUpdate.Add(wDirectionTile);
+                if (aDirectionTile != null)
+                    tilesToUpdate.Add(aDirectionTile);
+                if (sDirectionTile != null)
+                    tilesToUpdate.Add(sDirectionTile);
+                if (dDirectionTile != null)
+                    tilesToUpdate.Add(dDirectionTile);
+            }
+        }
+
+        UpdateTiles();
+    }
+
+    private void UpdateLight()
+    {
+        oldTiles = new List<FloorTile>(tilesToUpdate);
+        tilesToUpdate.Clear();
+        EventManager.instance.RaiseEvent("GetLights");
     }
 
     private bool CheckMove(Vector2 position)
@@ -64,5 +97,6 @@ public class TileManager : MonoBehaviour
         FloorTile ft = GetTileByPos(position);
         return ft != null && ft.stairs;
     }
+
 
 }

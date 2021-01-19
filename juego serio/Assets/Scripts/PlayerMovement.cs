@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     private int turnsInTheDark;
 
-    private Vector2 direction;
     private Vector2 targetDir;
     private Vector2 targetPos;
     private Vector2 startPos;
@@ -28,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         EventManager.instance.SuscribeToEvent("PlayerTurn", () => { playerTurn = true; lightTurn = false; });
         EventManager.instance.SuscribeToEvent("PlayerInDark", () => PlayerInTheDark());
         EventManager.instance.SuscribeToEvent("PlayerSafe", () => turnsInTheDark = 0);
+        EventManager.instance.SuscribeToEvent("GetLights", GetPlayerLight);
 
 
         EventManager.instance.SuscribeToEvent("Input_W", () => { if (CanMove()) SetDirectionW(); });
@@ -53,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
                         EventManager.instance.RaiseEvent("PlayerAction");
                         playerTurn = false;
                         lightTurn = false;
-                        startPos = lightTransform.position;
                     }
                     else
                     {
@@ -61,12 +60,15 @@ public class PlayerMovement : MonoBehaviour
                         EventManager.instance.RaiseEvent("PlayerTurn");
 
                     }
+                    startPos = lightTransform.position;
+
                 }
                 else
                 {
                     lightTurn = true;
                     followMode = false;
                     EventManager.instance.RaiseEvent("LightTurn");
+                    startPos = lightTransform.position;
 
                 }
             }
@@ -75,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 followMode = true;
                 lightTransform.position = playerTransform.position;
                 EventManager.instance.RaiseEvent("PlayerTurn");
-                EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
+                EventManager.instance.RaiseEvent("UpdateLight");
             }
         }
     }
@@ -104,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             (lightTurn ? lightTransform : playerTransform).position = targetPos;
-            direction = targetPos = targetDir = Vector3.zero;
+            targetPos = targetDir = Vector3.zero;
             moving = false;
 
             // if the player isnt moving the light end his turn
@@ -113,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
                 playerTurn = false;
                 EventManager.instance.RaiseEvent("PlayerAction");
                 if(followMode)
-                    EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
+                    EventManager.instance.RaiseEvent("UpdateLight");
 
             }
             else
@@ -122,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
                 EventManager.instance.RaiseEvent("LightTurn");
 
                 // Updates the tiles beneath the light 
-                EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
+                EventManager.instance.RaiseEvent("UpdateLight");
             }
 
             CheckMove();
@@ -137,26 +139,22 @@ public class PlayerMovement : MonoBehaviour
     
     public void SetDirectionW()
     {
-        direction = Vector2.left + Vector2.up;
-        SetTargetDir();
+        SetTargetDir(Vector2.left + Vector2.up);
     }
     public void SetDirectionA()
     {
-        direction = Vector2.left + Vector2.down;
-        SetTargetDir();
+        SetTargetDir(Vector2.left + Vector2.down);
     }
     public void SetDirectionS()
     {
-        direction = Vector2.right + Vector2.down;
-        SetTargetDir();
+        SetTargetDir(Vector2.right + Vector2.down);
     }
     public void SetDirectionD()
     {
-        direction = Vector2.right + Vector2.up;
-        SetTargetDir();
+        SetTargetDir(Vector2.right + Vector2.up);
     }
 
-    private void SetTargetDir()
+    private void SetTargetDir(Vector2 direction)
     {
         moving = true;
         targetDir.x = direction.x * offsetBetTiles.x;
@@ -176,12 +174,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if(!sameLevelTile && stairsUp)
             {
-                targetPos += offsetBetTiles + Vector2.up * offsetBetTiles.y*2;
+                targetPos += offsetBetTiles + Vector2.up * offsetBetTiles.y * 2;
                 targetDir.y += offsetBetTiles.y;
             }
             else if(sameLevelTile && stairsDown)
             {
-                targetPos -= offsetBetTiles + Vector2.up * offsetBetTiles.y*2;
+                targetPos -= offsetBetTiles + Vector2.up * offsetBetTiles.y * 2;
                 targetDir.y -= offsetBetTiles.y;
             }
             targetDir.Normalize();
@@ -201,5 +199,10 @@ public class PlayerMovement : MonoBehaviour
             lightTurn = false;
             playerTurn = true;
         }
+    }
+
+    private void GetPlayerLight()
+    {
+        EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
     }
 }
