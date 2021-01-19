@@ -14,11 +14,10 @@ public class TileManager : MonoBehaviour
         allTiles = new List<FloorTile>();
         tilesToUpdate = new List<FloorTile>();
         oldTiles = new List<FloorTile>();
-        EventManager.instance.SuscribeToEvent("PlayerMoved", CheckTile);
+        //EventManager.instance.SuscribeToEvent("MovementUpdate", CheckTile);
         EventManager.instance.SuscribeToEvent("UpdateLight", UpdateLight);
         EventManager.instance.SuscribeToEvent("LightMoved", PointLightMoved);
-        EventManager.instance.SuscribeToFuncEvent("CheckMove", CheckMove);
-        EventManager.instance.SuscribeToFuncEvent("CheckStairs", CheckStairs);
+        EventManager.instance.SuscribeToFuncEvent("CheckTile", CheckTile);
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -27,9 +26,9 @@ public class TileManager : MonoBehaviour
     }
 
 
-    private void CheckTile(Vector2 position)
+    private bool CheckTile(Vector2 position)
     {
-        GetTileByPos(position).DoAction();
+        return GetTileByPos(position) != null;
     }
 
 
@@ -87,16 +86,7 @@ public class TileManager : MonoBehaviour
         EventManager.instance.RaiseEvent("GetLights");
     }
 
-    private bool CheckMove(Vector2 position)
-    {
-        return GetTileByPos(position) != null;
-    }
     
-    private bool CheckStairs(Vector2 position)
-    {
-        FloorTile ft = GetTileByPos(position);
-        return ft != null && ft.stairs;
-    }
 
 
 }

@@ -3,11 +3,11 @@
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform lightTransform;
-    [SerializeField] private int lightRadius;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private Vector2 offsetBetTiles;
+    [SerializeField] private int lightRadius;
     [SerializeField] private int maxTurnsInTheDark;
-    [SerializeField] private float levelOffset;
+    [SerializeField] private MovementData playerMoveData;
+    [SerializeField] private MovementData lightMoveData;
 
     private int turnsInTheDark;
 
@@ -17,11 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool playerTurn = true;
     private bool lightTurn = false;
-    private bool moving = false;
     private bool followMode;
 
     private void Start()
     {
+        playerMoveData.Init(playerTransform);
+        lightMoveData.Init(lightTransform);
+
         startPos = lightTransform.position;
 
         EventManager.instance.SuscribeToEvent("PlayerTurn", () => { playerTurn = true; lightTurn = false; });
@@ -30,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
         EventManager.instance.SuscribeToEvent("GetLights", GetPlayerLight);
 
 
-        EventManager.instance.SuscribeToEvent("Input_W", () => { if (CanMove()) SetDirectionW(); });
-        EventManager.instance.SuscribeToEvent("Input_A", () => { if (CanMove()) SetDirectionA(); });
-        EventManager.instance.SuscribeToEvent("Input_S", () => { if (CanMove()) SetDirectionS(); });
-        EventManager.instance.SuscribeToEvent("Input_D", () => { if (CanMove()) SetDirectionD(); });
+        EventManager.instance.SuscribeToEvent("Input_W", () => { SetDirectionW(); });
+        EventManager.instance.SuscribeToEvent("Input_A", () => { SetDirectionA(); });
+        EventManager.instance.SuscribeToEvent("Input_S", () => { SetDirectionS(); });
+        EventManager.instance.SuscribeToEvent("Input_D", () => { SetDirectionD(); });
     }
 
     private void Update()
@@ -82,12 +84,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void CheckMove()
-    {
-        // Checks the tile under the player
-        EventManager.instance.RaiseEvent("PlayerMoved", playerTransform.position);
-    }
-
     private void Move()
     {
         if (lightTurn)
@@ -107,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
 
             (lightTurn ? lightTransform : playerTransform).position = targetPos;
             targetPos = targetDir = Vector3.zero;
-            moving = false;
 
             // if the player isnt moving the light end his turn
             if(!lightTurn)
@@ -127,66 +122,41 @@ public class PlayerMovement : MonoBehaviour
                 EventManager.instance.RaiseEvent("UpdateLight");
             }
 
-            CheckMove();
+            EventManager.instance.RaiseEvent("MovementUpdate");
         }
-    }
-
-    // TO-DO ADD RAYCASTS FOR WALLS
-    private bool CanMove()
-    {
-        return !moving && playerTurn;
     }
     
     public void SetDirectionW()
     {
-        SetTargetDir(Vector2.left + Vector2.up);
+        if(playerMoveData.canMoveW)
+            SetTargetDir(MovementData.WDirection);
     }
     public void SetDirectionA()
     {
-        SetTargetDir(Vector2.left + Vector2.down);
+        if(playerMoveData.canMoveW)
+            SetTargetDir(MovementData.ADirection);
     }
     public void SetDirectionS()
     {
-        SetTargetDir(Vector2.right + Vector2.down);
+        if(playerMoveData.canMoveW)
+            SetTargetDir(MovementData.SDirection);
     }
     public void SetDirectionD()
     {
-        SetTargetDir(Vector2.right + Vector2.up);
+        if(playerMoveData.canMoveW)
+            SetTargetDir(MovementData.DDirection);
     }
 
     private void SetTargetDir(Vector2 direction)
     {
-        moving = true;
-        targetDir.x = direction.x * offsetBetTiles.x;
-        targetDir.y = direction.y * offsetBetTiles.y;
+        targetDir.x = direction.x * MovementData.OffsetBetTiles.x;
+        targetDir.y = direction.y * MovementData.OffsetBetTiles.y;
         targetPos = (Vector2)(lightTurn ? lightTransform : playerTransform).position + targetDir;
 
-        bool sameLevelTile = EventManager.instance.RaiseFuncEvent("CheckMove", targetPos);
-        bool stairsUp = EventManager.instance.RaiseFuncEvent("CheckStairs", targetPos + Vector2.up * levelOffset);
-        bool stairsDown = EventManager.instance.RaiseFuncEvent("CheckStairs", targetPos);
+        targetDir.Normalize();
 
-        if (!sameLevelTile && !stairsUp && !stairsDown)
-        {
-            targetPos = targetDir = Vector2.zero;
-            moving = false;
-        }
-        else
-        {
-            if(!sameLevelTile && stairsUp)
-            {
-                targetPos += offsetBetTiles + Vector2.up * offsetBetTiles.y * 2;
-                targetDir.y += offsetBetTiles.y;
-            }
-            else if(sameLevelTile && stairsDown)
-            {
-                targetPos -= offsetBetTiles + Vector2.up * offsetBetTiles.y * 2;
-                targetDir.y -= offsetBetTiles.y;
-            }
-            targetDir.Normalize();
-
-            // disables the visuals while moving
-            EventManager.instance.RaiseEvent("DisableVisual");
-        }
+        // disables the visuals while moving
+        EventManager.instance.RaiseEvent("DisableVisual");
 
     }
 

@@ -8798,11 +8798,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightTransform: {fileID: 272757290}
-  lightRadius: 2
   playerTransform: {fileID: 2060944111}
-  offsetBetTiles: {x: 0.6, y: 0.3}
+  lightRadius: 2
   maxTurnsInTheDark: 400
-  levelOffset: 0.6
+  playerMoveData: {fileID: 11400000, guid: 9e157619e0c72144a9d29c2b64a74802, type: 2}
+  lightMoveData: {fileID: 11400000, guid: a8c0d37d79fd6d34583630841fa9a4e2, type: 2}
 --- !u!114 &1850468005
 MonoBehaviour:
   m_ObjectHideFlags: 0
