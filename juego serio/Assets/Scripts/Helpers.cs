@@ -15,6 +15,6 @@ public static class Helpers
     public static Vector2 SDirection = new Vector2( 0.6f, -0.3f);
     public static Vector2 DDirection = new Vector2( 0.6f,  0.3f);
 
-
+    public static Vector2 OffsetBetTiles = new Vector2(0.6f, 0.3f);
 
 }
