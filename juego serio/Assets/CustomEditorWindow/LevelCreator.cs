@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class LevelCreator : EditorWindow
@@ -51,6 +52,11 @@ public class LevelCreator : EditorWindow
         {
             SpawnTile();
         }
+
+        if(GUILayout.Button("Connect TIles"))
+        {
+            ConnectTiles();
+        }
         #endregion
     }
 
@@ -66,5 +72,32 @@ public class LevelCreator : EditorWindow
         tile.transform.position = tilePosition + Vector2.up * layer * layerOffset;
         tilePosition.x += 1.2f;
         visibilityLayer--;
+    }
+
+    private void ConnectTiles()
+    {
+        List<Tile> allTiles = new List<Tile>();
+
+        for (int i = 0; i < levelBase.childCount; i++)
+        {
+            allTiles.Add(levelBase.GetChild(i).GetComponent<Tile>());
+        }
+
+        for (int i = 0; i < allTiles.Count; i++)
+        {
+            Tile tile = allTiles[i];
+            tile.WTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection, allTiles);
+            tile.ATile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection, allTiles);
+            tile.STile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection, allTiles);
+            tile.DTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection, allTiles);
+        }
+    }
+
+    private Tile GetTileByPos(Vector2 pos, List<Tile> allTiles)
+    {
+        int i = 0;
+        for (; i < allTiles.Count && Vector2.Distance(allTiles[i].transform.position, pos) > 0.01f; i++) ;
+        return i < allTiles.Count ? allTiles[i] : null;
+
     }
 }

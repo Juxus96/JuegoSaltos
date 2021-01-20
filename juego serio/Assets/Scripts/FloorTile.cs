@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FloorTile : Tile
 {
-
     public override void SteppedIn()
     {
         if (tileState == TileState.DARK)

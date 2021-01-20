@@ -24,7 +24,16 @@ public class TileManager : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            allTiles.Add(Instantiate(new GameObject("Tile")).GetComponent<Tile>());
+            allTiles.Add(transform.GetChild(i).GetComponent<Tile>());
+        }
+
+        for (int i = 0; i < allTiles.Count; i++)
+        {
+            Tile tile = allTiles[i];
+            tile.WTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection);
+            tile.ATile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection);
+            tile.STile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection);
+            tile.DTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection);
         }
     }
 

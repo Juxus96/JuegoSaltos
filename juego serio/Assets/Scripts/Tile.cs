@@ -14,10 +14,10 @@ public abstract class Tile : MonoBehaviour
 
     [SerializeField] protected Sprite lightSprite;
     [SerializeField] protected Sprite darkSprite;
-    [SerializeField] protected Tile WTile;
-    [SerializeField] protected Tile ATile;
-    [SerializeField] protected Tile STile;
-    [SerializeField] protected Tile DTile;
+    [SerializeField] public Tile WTile;
+    [SerializeField] public Tile ATile;
+    [SerializeField] public Tile STile;
+    [SerializeField] public Tile DTile;
     protected SpriteRenderer assetRenderer;
     protected SpriteRenderer spriteRenderer;
     protected bool discovered;
@@ -25,7 +25,6 @@ public abstract class Tile : MonoBehaviour
 
     public abstract bool Walkable(Vector2 from);
     public abstract void SteppedIn();
-
 
     private void Awake()
     {
