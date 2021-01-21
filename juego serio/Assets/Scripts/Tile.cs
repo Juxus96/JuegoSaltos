@@ -18,6 +18,7 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] public Tile ATile;
     [SerializeField] public Tile STile;
     [SerializeField] public Tile DTile;
+    public int layer;
     protected SpriteRenderer assetRenderer;
     protected SpriteRenderer spriteRenderer;
     protected bool discovered;

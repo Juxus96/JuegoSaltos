@@ -14,7 +14,7 @@ public class EventManager : MonoBehaviour
 
     private Dictionary<string, Func<Vector2, bool>> vector2FuncBool;
     private Dictionary<string, Func<Vector2, Vector2>> vector2FuncVector2;
-    private Dictionary<string, Func<Vector2, Vector2, bool>> vector2Vector2FuncBool;
+    private Dictionary<string, Func<Vector2, Vector2, Vector2>> vector2Vector2FuncVector2;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class EventManager : MonoBehaviour
         vector2IntAction = new Dictionary<string, Action<Vector2, int>>();
         vector2FuncBool = new Dictionary<string, Func<Vector2, bool>>();
         vector2FuncVector2 = new Dictionary<string, Func<Vector2, Vector2>>();
-        vector2Vector2FuncBool = new Dictionary<string, Func<Vector2, Vector2, bool>>();
+        vector2Vector2FuncVector2 = new Dictionary<string, Func<Vector2, Vector2, Vector2>>();
     }
 
     #region Void Action
@@ -150,29 +150,29 @@ public class EventManager : MonoBehaviour
     }
     #endregion
 
-    #region Vector2 Vector2 Func Bool
-    public void SuscribeToBoolEvent(string key, Func<Vector2, Vector2, bool> answer)
+    #region Vector2 Vector2 Func Vector2
+    public void SuscribeToVect2Event(string key, Func<Vector2, Vector2, Vector2> answer)
     {
-        if (!vector2Vector2FuncBool.ContainsKey(key))
+        if (!vector2Vector2FuncVector2.ContainsKey(key))
         {
-            vector2Vector2FuncBool.Add(key, answer);
+            vector2Vector2FuncVector2.Add(key, answer);
         }
         else
-            vector2Vector2FuncBool[key] += answer;
+            vector2Vector2FuncVector2[key] += answer;
     }
 
-    public void UnsuscribeFromBoolEvent(string key, Func<Vector2, Vector2, bool> answer)
+    public void UnsuscribeFromVect2Event(string key, Func<Vector2, Vector2, Vector2> answer)
     {
-        if (vector2Vector2FuncBool.ContainsKey(key))
-            vector2Vector2FuncBool[key] -= answer;
+        if (vector2Vector2FuncVector2.ContainsKey(key))
+            vector2Vector2FuncVector2[key] -= answer;
     }
 
-    public bool RaiseBoolEvent(string key, Vector2 vector2, Vector2 v2)
+    public Vector2 RaiseVect2Event(string key, Vector2 vector2, Vector2 v2)
     {
-        if (vector2Vector2FuncBool != null)
-            return vector2Vector2FuncBool[key](vector2,v2);
+        if (vector2Vector2FuncVector2 != null)
+            return vector2Vector2FuncVector2[key](vector2,v2);
         else
-            return false;
+            return Vector2.up*int.MaxValue;
     }
     #endregion
 
@@ -193,12 +193,12 @@ public class EventManager : MonoBehaviour
             vector2FuncVector2[key] -= answer;
     }
 
-    public Vector2 RaiseVect2vent(string key, Vector2 vector2)
+    public Vector2 RaiseVect2Event(string key, Vector2 vector2)
     {
         if (vector2FuncVector2 != null)
             return vector2FuncVector2[key](vector2);
         else
-            return new Vector2(int.MaxValue,int.MaxValue);
+            return Vector2.up * int.MaxValue;
     }
     #endregion
     private void CreateSingleton()

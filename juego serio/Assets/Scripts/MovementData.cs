@@ -16,11 +16,6 @@ public class MovementData : ScriptableObject
     public bool canMoveS;
     [HideInInspector] public bool canMoveD;
 
-    public readonly static Vector2 OffsetBetTiles = new Vector2(0.6f, 0.3f);
-    public readonly static Vector2 WDirection = new Vector2(-1,  1);
-    public readonly static Vector2 ADirection = new Vector2(-1, -1);
-    public readonly static Vector2 SDirection = new Vector2( 1, -1);
-    public readonly static Vector2 DDirection = new Vector2( 1,  1);
     private Transform movingTransform;
 
     public void Init(Transform mTransform)
@@ -31,10 +26,10 @@ public class MovementData : ScriptableObject
 
     private void MovementUpdate()
     {
-        canMoveW = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, WDirection * OffsetBetTiles);
-        canMoveA = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, ADirection * OffsetBetTiles);
-        canMoveS = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, SDirection * OffsetBetTiles);
-        canMoveD = EventManager.instance.RaiseBoolEvent("CheckTileMovement", movingTransform.position, DDirection * OffsetBetTiles);
+        canMoveW = EventManager.instance.RaiseVect2Event("CheckTileMovement", movingTransform.position, Helpers.WDirection) != Vector2.up * int.MaxValue;
+        canMoveA = EventManager.instance.RaiseVect2Event("CheckTileMovement", movingTransform.position, Helpers.ADirection) != Vector2.up * int.MaxValue;
+        canMoveS = EventManager.instance.RaiseVect2Event("CheckTileMovement", movingTransform.position, Helpers.SDirection) != Vector2.up * int.MaxValue;
+        canMoveD = EventManager.instance.RaiseVect2Event("CheckTileMovement", movingTransform.position, Helpers.DDirection) != Vector2.up * int.MaxValue;
     }
 
 }

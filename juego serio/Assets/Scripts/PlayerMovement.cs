@@ -32,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
         EventManager.instance.SuscribeToEvent("GetLights", GetPlayerLight);
 
 
-        EventManager.instance.SuscribeToEvent("Input_W", () => { SetDirectionW(); });
-        EventManager.instance.SuscribeToEvent("Input_A", () => { SetDirectionA(); });
-        EventManager.instance.SuscribeToEvent("Input_S", () => { SetDirectionS(); });
-        EventManager.instance.SuscribeToEvent("Input_D", () => { SetDirectionD(); });
+        EventManager.instance.SuscribeToEvent("Input_W", () => { if (playerTurn) SetDirectionW(); });
+        EventManager.instance.SuscribeToEvent("Input_A", () => { if (playerTurn) SetDirectionA(); });
+        EventManager.instance.SuscribeToEvent("Input_S", () => { if (playerTurn) SetDirectionS(); });
+        EventManager.instance.SuscribeToEvent("Input_D", () => { if (playerTurn) SetDirectionD(); });
     }
 
     private void Update()
@@ -93,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
             playerTransform.Translate(targetDir * Time.deltaTime);
             if(followMode)
             {
-                lightTransform.Translate(targetDir * Time.deltaTime);
+                lightTransform.position = targetPos;
+
             }
         }
 
@@ -132,30 +133,28 @@ public class PlayerMovement : MonoBehaviour
     public void SetDirectionW()
     {
         if ((lightTurn ? lightMoveData : playerMoveData).canMoveW)
-            SetTargetDir(MovementData.WDirection);
+            SetTargetDir(Helpers.WDirection);
     }
     public void SetDirectionA()
     {
         if((lightTurn ? lightMoveData : playerMoveData).canMoveA)
-            SetTargetDir(MovementData.ADirection);
+            SetTargetDir(Helpers.ADirection);
     }
     public void SetDirectionS()
     {
         if((lightTurn ? lightMoveData : playerMoveData).canMoveS)
-            SetTargetDir(MovementData.SDirection);
+            SetTargetDir(Helpers.SDirection);
     }
     public void SetDirectionD()
     {
         if((lightTurn ? lightMoveData : playerMoveData).canMoveD)
-            SetTargetDir(MovementData.DDirection);
+            SetTargetDir(Helpers.DDirection);
     }
 
     private void SetTargetDir(Vector2 direction)
     {
-        targetDir.x = direction.x * MovementData.OffsetBetTiles.x;
-        targetDir.y = direction.y * MovementData.OffsetBetTiles.y;
-
-        targetPos = (Vector2)(lightTurn ? lightTransform : playerTransform).position + targetDir;
+        targetPos = EventManager.instance.RaiseVect2Event("CheckTileMovement", (lightTurn ? lightTransform : playerTransform).position, direction);
+        targetDir = targetPos - (Vector2)(lightTurn ? lightTransform : playerTransform).position;
         
         targetDir.Normalize();
 

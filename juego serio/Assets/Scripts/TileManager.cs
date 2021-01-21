@@ -19,21 +19,12 @@ public class TileManager : MonoBehaviour
 
         EventManager.instance.SuscribeToEvent("UpdateLight", UpdateLight);
         EventManager.instance.SuscribeToEvent("LightMoved", PointLightMoved);
-        EventManager.instance.SuscribeToBoolEvent("CheckTileMovement", CheckTileToMove);
+        EventManager.instance.SuscribeToVect2Event("CheckTileMovement", CheckTileToMove);
         EventManager.instance.SuscribeToVect2Event("GetTilePos", GetTIlePos);
 
         for (int i = 0; i < transform.childCount; i++)
         {
             allTiles.Add(transform.GetChild(i).GetComponent<Tile>());
-        }
-
-        for (int i = 0; i < allTiles.Count; i++)
-        {
-            Tile tile = allTiles[i];
-            tile.WTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection);
-            tile.ATile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection);
-            tile.STile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection);
-            tile.DTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection);
         }
     }
 
@@ -43,12 +34,24 @@ public class TileManager : MonoBehaviour
     }
 
     // Changes the boolean in the movement data
-    private bool CheckTileToMove(Vector2 position, Vector2 direction)
+    private Vector2 CheckTileToMove(Vector2 position, Vector2 direction)
     {
-        Tile tile = GetTileByPos(position + direction);
-        Tile stair = GetTileByPos(position + direction + Vector2.up * offsetBetLayers);
+        Tile tile = GetTileByPos(position);
 
-        return tile != null && tile.Walkable(position) || stair != null && stair.GetType() == typeof(StairTile) && stair.Walkable(position);
+        if (direction == Helpers.WDirection && tile.WTile != null)
+            return tile.WTile.transform.position;
+
+        if (direction == Helpers.ADirection && tile.ATile != null)
+            return tile.ATile.transform.position;
+
+        if (direction == Helpers.SDirection && tile.STile != null)
+            return tile.STile.transform.position;
+
+        if (direction == Helpers.DDirection && tile.DTile != null)
+            return tile.DTile.transform.position;
+
+        else
+            return Vector2.up * int.MaxValue;
     }
 
 
@@ -80,10 +83,10 @@ public class TileManager : MonoBehaviour
         {
             for (int j = radius - i; j > 0 ; j--)
             {
-                Tile wDirectionTile = GetTileByPos(position + Vector2.up * MovementData.OffsetBetTiles.y * (j + i) - Vector2.right * MovementData.OffsetBetTiles.x * (j - i));
-                Tile aDirectionTile = GetTileByPos(position - Vector2.up * MovementData.OffsetBetTiles.y * (j + i) + Vector2.right * MovementData.OffsetBetTiles.x * (j - i));
-                Tile sDirectionTile = GetTileByPos(position - Vector2.up * MovementData.OffsetBetTiles.y * (j - i) - Vector2.right * MovementData.OffsetBetTiles.x * (j + i));
-                Tile dDirectionTile = GetTileByPos(position + Vector2.up * MovementData.OffsetBetTiles.y * (j - i) + Vector2.right * MovementData.OffsetBetTiles.x * (j + i));
+                Tile wDirectionTile = GetTileByPos(position + Vector2.up * Helpers.OffsetBetTiles.y * (j + i) - Vector2.right * Helpers.OffsetBetTiles.x * (j - i));
+                Tile aDirectionTile = GetTileByPos(position - Vector2.up * Helpers.OffsetBetTiles.y * (j + i) + Vector2.right * Helpers.OffsetBetTiles.x * (j - i));
+                Tile sDirectionTile = GetTileByPos(position - Vector2.up * Helpers.OffsetBetTiles.y * (j - i) - Vector2.right * Helpers.OffsetBetTiles.x * (j + i));
+                Tile dDirectionTile = GetTileByPos(position + Vector2.up * Helpers.OffsetBetTiles.y * (j - i) + Vector2.right * Helpers.OffsetBetTiles.x * (j + i));
 
                 if (wDirectionTile != null)
                     tilesToUpdate.Add(wDirectionTile);

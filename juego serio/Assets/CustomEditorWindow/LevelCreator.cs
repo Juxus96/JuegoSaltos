@@ -117,6 +117,7 @@ public class LevelCreator : EditorWindow
             GameObject tile = Instantiate(tileToSpawn, levelBase);
             allTiles.Add(tile.GetComponent<Tile>());
             tile.transform.position = tilePosition + Vector2.up * layer * layerOffset;
+            tile.GetComponent<Tile>().layer = layer;
             tile.GetComponent<SpriteRenderer>().sortingOrder = (int)(-tilePosition.y * 100);
 
         }
@@ -144,10 +145,11 @@ public class LevelCreator : EditorWindow
         }
     }
 
+
     private Tile GetTileByPos(Vector2 pos)
     {
         int i = 0;
-        for (; i < allTiles.Count && Vector2.Distance(allTiles[i].transform.position, pos) > 0.01f; i++) ;
+        for (; i < allTiles.Count && Vector2.Distance((Vector2)allTiles[i].transform.position, pos) > 0.01f; i++) ;
         return i < allTiles.Count ? allTiles[i] : null;
 
     }
