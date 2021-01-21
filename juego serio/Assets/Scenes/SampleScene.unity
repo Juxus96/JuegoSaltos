@@ -170,10 +170,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1154116725}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 1470986859}
+  directionalTiles:
+  - {fileID: 1154116725}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1470986859}
   layer: 1
 --- !u!212 &6829067
 SpriteRenderer:
@@ -273,10 +274,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &13948076
 SpriteRenderer:
@@ -470,10 +468,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &53383668
 GameObject:
@@ -522,10 +517,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 974599287}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 986124874}
+  directionalTiles:
+  - {fileID: 974599287}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 986124874}
   layer: 0
 --- !u!212 &53383671
 SpriteRenderer:
@@ -625,10 +621,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 814854812}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 303153367}
+  directionalTiles:
+  - {fileID: 814854812}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 303153367}
   layer: 0
 --- !u!212 &66558070
 SpriteRenderer:
@@ -779,10 +776,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &97451049
 GameObject:
@@ -831,10 +825,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 368454717}
-  STile: {fileID: 1025421282}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 368454717}
+  - {fileID: 1025421282}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &97451052
 SpriteRenderer:
@@ -934,10 +929,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 595194451}
-  ATile: {fileID: 225840191}
-  STile: {fileID: 1803479094}
-  DTile: {fileID: 1991361083}
+  directionalTiles:
+  - {fileID: 595194451}
+  - {fileID: 225840191}
+  - {fileID: 1803479094}
+  - {fileID: 1991361083}
   layer: 0
 --- !u!212 &106153889
 SpriteRenderer:
@@ -1088,10 +1084,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &134658759
 GameObject:
@@ -1191,10 +1184,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &137329754
 GameObject:
@@ -1243,10 +1233,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 150556301}
-  ATile: {fileID: 2034097373}
-  STile: {fileID: 987390211}
-  DTile: {fileID: 1361474766}
+  directionalTiles:
+  - {fileID: 150556301}
+  - {fileID: 2034097373}
+  - {fileID: 987390211}
+  - {fileID: 1361474766}
   layer: 0
 --- !u!212 &137329757
 SpriteRenderer:
@@ -1397,10 +1388,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &150556299
 GameObject:
@@ -1449,10 +1437,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1437345022}
-  ATile: {fileID: 1175841428}
-  STile: {fileID: 137329756}
-  DTile: {fileID: 368454717}
+  directionalTiles:
+  - {fileID: 1437345022}
+  - {fileID: 1175841428}
+  - {fileID: 137329756}
+  - {fileID: 368454717}
   layer: 0
 --- !u!212 &150556302
 SpriteRenderer:
@@ -1603,10 +1592,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &152785210
 GameObject:
@@ -1655,10 +1641,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 751903469}
-  STile: {fileID: 397973254}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 751903469}
+  - {fileID: 397973254}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &152785213
 SpriteRenderer:
@@ -1758,10 +1745,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &175305349
 SpriteRenderer:
@@ -1861,10 +1845,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 1154116725}
-  STile: {fileID: 1470986859}
-  DTile: {fileID: 1145117587}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 1154116725}
+  - {fileID: 1470986859}
+  - {fileID: 1145117587}
   layer: 1
 --- !u!212 &200921466
 SpriteRenderer:
@@ -1964,10 +1949,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1451885421}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 106153888}
+  directionalTiles:
+  - {fileID: 1451885421}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 106153888}
   layer: 0
 --- !u!212 &225840192
 SpriteRenderer:
@@ -2047,18 +2033,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 247796443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea339d9081af4d04297b01ec1ed80372, type: 3}
+  m_Script: {fileID: 11500000, guid: d6d25373e8fa1634ba6c2ee82a6c7ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 89785fda3e3c4d648ad6bfb3e345754d, type: 3}
   darkSprite: {fileID: 21300000, guid: 27714da9a6ff5af4c9a83ee6baeb043f, type: 3}
-  WTile: {fileID: 1004113469}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 551973435}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   layer: 1
-  directions: []
 --- !u!212 &247796445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2222,10 +2208,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &272757289
 GameObject:
@@ -2356,10 +2339,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &303153365
 GameObject:
@@ -2408,10 +2388,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 805033411}
-  ATile: {fileID: 66558069}
-  STile: {fileID: 967032923}
-  DTile: {fileID: 898836663}
+  directionalTiles:
+  - {fileID: 805033411}
+  - {fileID: 66558069}
+  - {fileID: 967032923}
+  - {fileID: 898836663}
   layer: 0
 --- !u!212 &303153368
 SpriteRenderer:
@@ -2585,12 +2566,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionA
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2642,10 +2623,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &324295208
 SpriteRenderer:
@@ -2796,10 +2774,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &337975222
 GameObject:
@@ -2922,8 +2897,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionW
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2979,10 +2954,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &343586797
 SpriteRenderer:
@@ -3133,10 +3105,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &368454715
 GameObject:
@@ -3185,10 +3154,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1039436569}
-  ATile: {fileID: 150556301}
-  STile: {fileID: 1361474766}
-  DTile: {fileID: 97451051}
+  directionalTiles:
+  - {fileID: 1039436569}
+  - {fileID: 150556301}
+  - {fileID: 1361474766}
+  - {fileID: 97451051}
   layer: 0
 --- !u!212 &368454718
 SpriteRenderer:
@@ -3339,10 +3309,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &397973252
 GameObject:
@@ -3391,10 +3358,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 152785212}
-  ATile: {fileID: 1367521367}
-  STile: {fileID: 1463962962}
-  DTile: {fileID: 547471425}
+  directionalTiles:
+  - {fileID: 152785212}
+  - {fileID: 1367521367}
+  - {fileID: 1463962962}
+  - {fileID: 547471425}
   layer: 0
 --- !u!212 &397973255
 SpriteRenderer:
@@ -3480,10 +3448,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 813817898}
-  ATile: {fileID: 952091018}
-  STile: {fileID: 1880104508}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 813817898}
+  - {fileID: 952091018}
+  - {fileID: 1880104508}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &416365212
 SpriteRenderer:
@@ -3597,10 +3566,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &420367994
 SpriteRenderer:
@@ -3751,10 +3717,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &462008136
 GameObject:
@@ -3803,10 +3766,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1374983502}
-  ATile: {fileID: 986124874}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 1374983502}
+  - {fileID: 986124874}
+  - {fileID: 0}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &462008139
 SpriteRenderer:
@@ -3906,10 +3870,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &479781205
 SpriteRenderer:
@@ -4060,10 +4021,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &499540290
 GameObject:
@@ -4112,10 +4070,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 1999146435}
-  STile: {fileID: 751903469}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 1999146435}
+  - {fileID: 751903469}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &499540293
 SpriteRenderer:
@@ -4215,10 +4174,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 397973254}
-  STile: {fileID: 547513911}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 397973254}
+  - {fileID: 547513911}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &547471426
 SpriteRenderer:
@@ -4318,10 +4278,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 547471425}
-  ATile: {fileID: 1463962962}
-  STile: {fileID: 1437345022}
-  DTile: {fileID: 817524840}
+  directionalTiles:
+  - {fileID: 547471425}
+  - {fileID: 1463962962}
+  - {fileID: 1437345022}
+  - {fileID: 817524840}
   layer: 0
 --- !u!212 &547513912
 SpriteRenderer:
@@ -4407,10 +4368,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1927054139}
-  ATile: {fileID: 1039436569}
-  STile: {fileID: 561154016}
-  DTile: {fileID: 1076678771}
+  directionalTiles:
+  - {fileID: 1927054139}
+  - {fileID: 0}
+  - {fileID: 561154016}
+  - {fileID: 1076678771}
   layer: 1
 --- !u!212 &551973436
 SpriteRenderer:
@@ -4575,10 +4537,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &558302756
 GameObject:
@@ -4678,10 +4637,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &561154015
 GameObject:
@@ -4716,10 +4672,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 551973435}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 853966283}
+  directionalTiles:
+  - {fileID: 551973435}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 853966283}
   layer: 1
 --- !u!212 &561154017
 SpriteRenderer:
@@ -4833,10 +4790,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &589216514
 SpriteRenderer:
@@ -4936,10 +4890,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1367521367}
-  ATile: {fileID: 1451885421}
-  STile: {fileID: 106153888}
-  DTile: {fileID: 1463962962}
+  directionalTiles:
+  - {fileID: 1367521367}
+  - {fileID: 1451885421}
+  - {fileID: 106153888}
+  - {fileID: 1463962962}
   layer: 0
 --- !u!212 &595194452
 SpriteRenderer:
@@ -5194,10 +5149,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &638432398
 GameObject:
@@ -5380,10 +5332,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &667681302
 GameObject:
@@ -5526,10 +5475,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &705507993
 GameObject:
@@ -5670,10 +5616,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 2094164321}
-  ATile: {fileID: 1334675619}
-  STile: {fileID: 817524840}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 2094164321}
+  - {fileID: 1334675619}
+  - {fileID: 0}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &712703090
 SpriteRenderer:
@@ -5824,10 +5771,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &751903467
 GameObject:
@@ -5876,10 +5820,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 499540292}
-  ATile: {fileID: 755962075}
-  STile: {fileID: 1367521367}
-  DTile: {fileID: 152785212}
+  directionalTiles:
+  - {fileID: 499540292}
+  - {fileID: 755962075}
+  - {fileID: 1367521367}
+  - {fileID: 152785212}
   layer: 0
 --- !u!212 &751903470
 SpriteRenderer:
@@ -5979,10 +5924,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1999146435}
-  ATile: {fileID: 0}
-  STile: {fileID: 1440691676}
-  DTile: {fileID: 751903469}
+  directionalTiles:
+  - {fileID: 1999146435}
+  - {fileID: 0}
+  - {fileID: 1440691676}
+  - {fileID: 751903469}
   layer: 0
 --- !u!212 &755962076
 SpriteRenderer:
@@ -6133,10 +6079,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &759203067
 GameObject:
@@ -6221,12 +6164,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionD
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6352,8 +6295,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionW
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6447,10 +6390,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1025421282}
-  ATile: {fileID: 814854812}
-  STile: {fileID: 303153367}
-  DTile: {fileID: 1125883130}
+  directionalTiles:
+  - {fileID: 1025421282}
+  - {fileID: 814854812}
+  - {fileID: 303153367}
+  - {fileID: 1125883130}
   layer: 0
 --- !u!212 &805033412
 SpriteRenderer:
@@ -6550,10 +6494,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 1901497821}
-  STile: {fileID: 416365211}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 1901497821}
+  - {fileID: 416365211}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &813817899
 SpriteRenderer:
@@ -6653,10 +6598,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1361474766}
-  ATile: {fileID: 987390211}
-  STile: {fileID: 66558069}
-  DTile: {fileID: 805033411}
+  directionalTiles:
+  - {fileID: 1361474766}
+  - {fileID: 987390211}
+  - {fileID: 66558069}
+  - {fileID: 805033411}
   layer: 0
 --- !u!212 &814854813
 SpriteRenderer:
@@ -6830,10 +6776,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 712703089}
-  ATile: {fileID: 547513911}
-  STile: {fileID: 1039436569}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 547513911}
+  - {fileID: 1039436569}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &817524841
 SpriteRenderer:
@@ -6984,10 +6931,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &837702766
 GameObject:
@@ -7022,10 +6966,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 853966283}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 994320742}
+  directionalTiles:
+  - {fileID: 853966283}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 994320742}
   layer: 1
 --- !u!212 &837702768
 SpriteRenderer:
@@ -7139,10 +7084,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &838588218
 SpriteRenderer:
@@ -7228,10 +7170,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1076678771}
-  ATile: {fileID: 561154016}
-  STile: {fileID: 837702767}
-  DTile: {fileID: 1881750652}
+  directionalTiles:
+  - {fileID: 1076678771}
+  - {fileID: 561154016}
+  - {fileID: 837702767}
+  - {fileID: 1881750652}
   layer: 1
 --- !u!212 &853966284
 SpriteRenderer:
@@ -7417,8 +7360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ee196155a228e4c8b87fc741b71e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetBetLayers: 0.6
-  GridSize: {x: 8, y: 3}
 --- !u!114 &861242819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7467,10 +7408,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 1927054139}
-  DTile: {fileID: 1901497821}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1927054139}
+  - {fileID: 1901497821}
   layer: 1
 --- !u!212 &876512980
 SpriteRenderer:
@@ -7584,10 +7526,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1125883130}
-  ATile: {fileID: 303153367}
-  STile: {fileID: 974599287}
-  DTile: {fileID: 1408672405}
+  directionalTiles:
+  - {fileID: 1125883130}
+  - {fileID: 303153367}
+  - {fileID: 974599287}
+  - {fileID: 1408672405}
   layer: 0
 --- !u!212 &898836664
 SpriteRenderer:
@@ -7673,10 +7616,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1901497821}
-  ATile: {fileID: 1927054139}
-  STile: {fileID: 1076678771}
-  DTile: {fileID: 416365211}
+  directionalTiles:
+  - {fileID: 1901497821}
+  - {fileID: 1927054139}
+  - {fileID: 1076678771}
+  - {fileID: 416365211}
   layer: 1
 --- !u!212 &952091019
 SpriteRenderer:
@@ -7841,10 +7785,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &958451752
 GameObject:
@@ -7893,10 +7834,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1796412137}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 1451885421}
+  directionalTiles:
+  - {fileID: 1796412137}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1451885421}
   layer: 0
 --- !u!212 &958451755
 SpriteRenderer:
@@ -7996,10 +7938,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1408672405}
-  ATile: {fileID: 974599287}
-  STile: {fileID: 986124874}
-  DTile: {fileID: 1374983502}
+  directionalTiles:
+  - {fileID: 1408672405}
+  - {fileID: 974599287}
+  - {fileID: 986124874}
+  - {fileID: 1374983502}
   layer: 0
 --- !u!212 &962706199
 SpriteRenderer:
@@ -8182,10 +8125,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 303153367}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 974599287}
+  directionalTiles:
+  - {fileID: 303153367}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 974599287}
   layer: 0
 --- !u!212 &967032924
 SpriteRenderer:
@@ -8285,10 +8229,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 898836663}
-  ATile: {fileID: 967032923}
-  STile: {fileID: 53383670}
-  DTile: {fileID: 962706198}
+  directionalTiles:
+  - {fileID: 898836663}
+  - {fileID: 967032923}
+  - {fileID: 53383670}
+  - {fileID: 962706198}
   layer: 0
 --- !u!212 &974599288
 SpriteRenderer:
@@ -8439,10 +8384,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &979142011
 GameObject:
@@ -8491,10 +8433,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &979142014
 SpriteRenderer:
@@ -8645,10 +8584,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &986124872
 GameObject:
@@ -8697,10 +8633,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 962706198}
-  ATile: {fileID: 53383670}
-  STile: {fileID: 1152979573}
-  DTile: {fileID: 462008138}
+  directionalTiles:
+  - {fileID: 962706198}
+  - {fileID: 53383670}
+  - {fileID: 1152979573}
+  - {fileID: 462008138}
   layer: 0
 --- !u!212 &986124875
 SpriteRenderer:
@@ -8800,10 +8737,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 137329756}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 814854812}
+  directionalTiles:
+  - {fileID: 137329756}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 814854812}
   layer: 0
 --- !u!212 &987390212
 SpriteRenderer:
@@ -8954,10 +8892,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &992593222
 GameObject:
@@ -8992,10 +8927,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 994320742}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 994320742}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &992593224
 SpriteRenderer:
@@ -9095,10 +9031,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1881750652}
-  ATile: {fileID: 837702767}
-  STile: {fileID: 992593223}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 1881750652}
+  - {fileID: 837702767}
+  - {fileID: 992593223}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &994320743
 SpriteRenderer:
@@ -9263,10 +9200,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1004113468
 GameObject:
@@ -9301,10 +9235,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 247796444}
-  DTile: {fileID: 1927054139}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1927054139}
   layer: 1
 --- !u!212 &1004113470
 SpriteRenderer:
@@ -9492,12 +9427,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionS
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9549,10 +9484,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 97451051}
-  ATile: {fileID: 1361474766}
-  STile: {fileID: 805033411}
-  DTile: {fileID: 1258320949}
+  directionalTiles:
+  - {fileID: 97451051}
+  - {fileID: 1361474766}
+  - {fileID: 805033411}
+  - {fileID: 1258320949}
   layer: 0
 --- !u!212 &1025421283
 SpriteRenderer:
@@ -9703,10 +9639,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1039436567
 GameObject:
@@ -9755,10 +9688,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 817524840}
-  ATile: {fileID: 1437345022}
-  STile: {fileID: 368454717}
-  DTile: {fileID: 551973435}
+  directionalTiles:
+  - {fileID: 817524840}
+  - {fileID: 1437345022}
+  - {fileID: 368454717}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &1039436570
 SpriteRenderer:
@@ -9909,10 +9843,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1067228966
 GameObject:
@@ -10012,10 +9943,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1076678770
 GameObject:
@@ -10050,10 +9978,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 952091018}
-  ATile: {fileID: 551973435}
-  STile: {fileID: 853966283}
-  DTile: {fileID: 1880104508}
+  directionalTiles:
+  - {fileID: 952091018}
+  - {fileID: 551973435}
+  - {fileID: 853966283}
+  - {fileID: 1880104508}
   layer: 1
 --- !u!212 &1076678772
 SpriteRenderer:
@@ -10167,10 +10096,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1258320949}
-  ATile: {fileID: 805033411}
-  STile: {fileID: 898836663}
-  DTile: {fileID: 2059955870}
+  directionalTiles:
+  - {fileID: 1258320949}
+  - {fileID: 805033411}
+  - {fileID: 898836663}
+  - {fileID: 2059955870}
   layer: 0
 --- !u!212 &1125883131
 SpriteRenderer:
@@ -10264,18 +10194,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1132475951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea339d9081af4d04297b01ec1ed80372, type: 3}
+  m_Script: {fileID: 11500000, guid: d6d25373e8fa1634ba6c2ee82a6c7ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 89785fda3e3c4d648ad6bfb3e345754d, type: 3}
   darkSprite: {fileID: 21300000, guid: 27714da9a6ff5af4c9a83ee6baeb043f, type: 3}
-  WTile: {fileID: 712703089}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   layer: 1
-  directions: []
 --- !u!212 &1132475954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10374,10 +10304,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1133810044
 SpriteRenderer:
@@ -10477,10 +10404,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1139713249
 SpriteRenderer:
@@ -10631,10 +10555,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1145117585
 GameObject:
@@ -10683,10 +10604,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 200921465}
-  STile: {fileID: 2094164321}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 200921465}
+  - {fileID: 2094164321}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &1145117588
 SpriteRenderer:
@@ -10837,10 +10759,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1152979571
 GameObject:
@@ -10889,10 +10808,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 986124874}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 986124874}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &1152979574
 SpriteRenderer:
@@ -10992,10 +10912,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 6829066}
-  DTile: {fileID: 200921465}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 6829066}
+  - {fileID: 200921465}
   layer: 1
 --- !u!212 &1154116726
 SpriteRenderer:
@@ -11095,10 +11016,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1161822321
 SpriteRenderer:
@@ -11198,10 +11116,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1991361083}
-  ATile: {fileID: 1803479094}
-  STile: {fileID: 2034097373}
-  DTile: {fileID: 150556301}
+  directionalTiles:
+  - {fileID: 1991361083}
+  - {fileID: 1803479094}
+  - {fileID: 2034097373}
+  - {fileID: 150556301}
   layer: 0
 --- !u!212 &1175841429
 SpriteRenderer:
@@ -11395,10 +11314,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1220929570
 GameObject:
@@ -11498,10 +11414,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1228443669
 GameObject:
@@ -11601,10 +11514,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1234747730
 GameObject:
@@ -11653,10 +11563,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1234747733
 SpriteRenderer:
@@ -11807,10 +11714,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1258320947
 GameObject:
@@ -11859,10 +11763,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 1025421282}
-  STile: {fileID: 1125883130}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 1025421282}
+  - {fileID: 1125883130}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &1258320950
 SpriteRenderer:
@@ -11998,12 +11903,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionS
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12144,10 +12049,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1296670091
 GameObject:
@@ -12247,10 +12149,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1301455488
 GameObject:
@@ -12350,10 +12249,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1313881779
 GameObject:
@@ -12402,10 +12298,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1313881782
 SpriteRenderer:
@@ -12505,10 +12398,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 1408672405}
-  STile: {fileID: 1374983502}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 1408672405}
+  - {fileID: 1374983502}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &1331915334
 SpriteRenderer:
@@ -12608,10 +12502,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1470986859}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 712703089}
+  directionalTiles:
+  - {fileID: 1470986859}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 712703089}
   layer: 1
 --- !u!212 &1334675620
 SpriteRenderer:
@@ -12711,10 +12606,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 368454717}
-  ATile: {fileID: 137329756}
-  STile: {fileID: 814854812}
-  DTile: {fileID: 1025421282}
+  directionalTiles:
+  - {fileID: 368454717}
+  - {fileID: 137329756}
+  - {fileID: 814854812}
+  - {fileID: 1025421282}
   layer: 0
 --- !u!212 &1361474767
 SpriteRenderer:
@@ -12814,10 +12710,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 751903469}
-  ATile: {fileID: 1440691676}
-  STile: {fileID: 595194451}
-  DTile: {fileID: 397973254}
+  directionalTiles:
+  - {fileID: 751903469}
+  - {fileID: 1440691676}
+  - {fileID: 595194451}
+  - {fileID: 397973254}
   layer: 0
 --- !u!212 &1367521368
 SpriteRenderer:
@@ -12917,10 +12814,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1331915333}
-  ATile: {fileID: 962706198}
-  STile: {fileID: 462008138}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 1331915333}
+  - {fileID: 962706198}
+  - {fileID: 462008138}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &1374983503
 SpriteRenderer:
@@ -13071,10 +12969,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1408672403
 GameObject:
@@ -13123,10 +13018,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 2059955870}
-  ATile: {fileID: 898836663}
-  STile: {fileID: 962706198}
-  DTile: {fileID: 1331915333}
+  directionalTiles:
+  - {fileID: 2059955870}
+  - {fileID: 898836663}
+  - {fileID: 962706198}
+  - {fileID: 1331915333}
   layer: 0
 --- !u!212 &1408672406
 SpriteRenderer:
@@ -13226,10 +13122,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 547513911}
-  ATile: {fileID: 1991361083}
-  STile: {fileID: 150556301}
-  DTile: {fileID: 1039436569}
+  directionalTiles:
+  - {fileID: 547513911}
+  - {fileID: 1991361083}
+  - {fileID: 150556301}
+  - {fileID: 1039436569}
   layer: 0
 --- !u!212 &1437345023
 SpriteRenderer:
@@ -13329,10 +13226,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 755962075}
-  ATile: {fileID: 1796412137}
-  STile: {fileID: 1451885421}
-  DTile: {fileID: 1367521367}
+  directionalTiles:
+  - {fileID: 755962075}
+  - {fileID: 1796412137}
+  - {fileID: 1451885421}
+  - {fileID: 1367521367}
   layer: 0
 --- !u!212 &1440691677
 SpriteRenderer:
@@ -13432,10 +13330,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1440691676}
-  ATile: {fileID: 958451754}
-  STile: {fileID: 225840191}
-  DTile: {fileID: 595194451}
+  directionalTiles:
+  - {fileID: 1440691676}
+  - {fileID: 958451754}
+  - {fileID: 225840191}
+  - {fileID: 595194451}
   layer: 0
 --- !u!212 &1451885422
 SpriteRenderer:
@@ -13571,12 +13470,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionA
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13666,10 +13565,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1454846077
 SpriteRenderer:
@@ -13820,10 +13716,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1462230610
 GameObject:
@@ -13946,12 +13839,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1850468004}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: SetDirectionD
-        m_Mode: 1
+        m_MethodName: SetDirection
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14003,10 +13896,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 397973254}
-  ATile: {fileID: 595194451}
-  STile: {fileID: 1991361083}
-  DTile: {fileID: 547513911}
+  directionalTiles:
+  - {fileID: 397973254}
+  - {fileID: 595194451}
+  - {fileID: 1991361083}
+  - {fileID: 547513911}
   layer: 0
 --- !u!212 &1463962963
 SpriteRenderer:
@@ -14092,10 +13986,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 200921465}
-  ATile: {fileID: 6829066}
-  STile: {fileID: 1334675619}
-  DTile: {fileID: 2094164321}
+  directionalTiles:
+  - {fileID: 200921465}
+  - {fileID: 6829066}
+  - {fileID: 1334675619}
+  - {fileID: 2094164321}
   layer: 1
 --- !u!212 &1470986860
 SpriteRenderer:
@@ -14260,10 +14155,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1493788955
 GameObject:
@@ -14363,10 +14255,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1514163846
 GameObject:
@@ -14466,10 +14355,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1517328920
 GameObject:
@@ -14518,10 +14404,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1517328923
 SpriteRenderer:
@@ -14672,10 +14555,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1557639847
 GameObject:
@@ -14775,10 +14655,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1580879401
 GameObject:
@@ -14878,10 +14755,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1621073549
 GameObject:
@@ -14981,10 +14855,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1704940184
 GameObject:
@@ -15084,10 +14955,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1759352136
 GameObject:
@@ -15187,10 +15055,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1796412135
 GameObject:
@@ -15239,10 +15104,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 958451754}
-  DTile: {fileID: 1440691676}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 958451754}
+  - {fileID: 1440691676}
   layer: 0
 --- !u!212 &1796412138
 SpriteRenderer:
@@ -15342,10 +15208,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 106153888}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 1175841428}
+  directionalTiles:
+  - {fileID: 106153888}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1175841428}
   layer: 0
 --- !u!212 &1803479095
 SpriteRenderer:
@@ -15598,10 +15465,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1850468002
 GameObject:
@@ -15652,7 +15516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightTransform: {fileID: 272757290}
   playerTransform: {fileID: 2060944111}
-  lightRadius: 2
+  lightRadius: 3
   maxTurnsInTheDark: 400
   playerMoveData: {fileID: 11400000, guid: 9e157619e0c72144a9d29c2b64a74802, type: 2}
   lightMoveData: {fileID: 11400000, guid: a8c0d37d79fd6d34583630841fa9a4e2, type: 2}
@@ -15731,10 +15595,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 416365211}
-  ATile: {fileID: 1076678771}
-  STile: {fileID: 1881750652}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 416365211}
+  - {fileID: 1076678771}
+  - {fileID: 1881750652}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &1880104509
 SpriteRenderer:
@@ -15834,10 +15699,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1880104508}
-  ATile: {fileID: 853966283}
-  STile: {fileID: 994320742}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 1880104508}
+  - {fileID: 853966283}
+  - {fileID: 994320742}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &1881750653
 SpriteRenderer:
@@ -16002,10 +15868,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1901497820
 GameObject:
@@ -16040,10 +15903,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 876512979}
-  STile: {fileID: 952091018}
-  DTile: {fileID: 813817898}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 876512979}
+  - {fileID: 952091018}
+  - {fileID: 813817898}
   layer: 1
 --- !u!212 &1901497822
 SpriteRenderer:
@@ -16162,10 +16026,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!212 &1915130356
 SpriteRenderer:
@@ -16316,10 +16177,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1927054138
 GameObject:
@@ -16354,10 +16212,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 876512979}
-  ATile: {fileID: 1004113469}
-  STile: {fileID: 551973435}
-  DTile: {fileID: 952091018}
+  directionalTiles:
+  - {fileID: 876512979}
+  - {fileID: 1004113469}
+  - {fileID: 551973435}
+  - {fileID: 952091018}
   layer: 1
 --- !u!212 &1927054140
 SpriteRenderer:
@@ -16537,10 +16396,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1463962962}
-  ATile: {fileID: 106153888}
-  STile: {fileID: 1175841428}
-  DTile: {fileID: 1437345022}
+  directionalTiles:
+  - {fileID: 1463962962}
+  - {fileID: 106153888}
+  - {fileID: 1175841428}
+  - {fileID: 1437345022}
   layer: 0
 --- !u!212 &1991361084
 SpriteRenderer:
@@ -16691,10 +16551,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &1999146433
 GameObject:
@@ -16743,10 +16600,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 755962075}
-  DTile: {fileID: 499540292}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 755962075}
+  - {fileID: 499540292}
   layer: 0
 --- !u!212 &1999146436
 SpriteRenderer:
@@ -16948,10 +16806,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1175841428}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 137329756}
+  directionalTiles:
+  - {fileID: 1175841428}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 137329756}
   layer: 0
 --- !u!212 &2034097374
 SpriteRenderer:
@@ -17051,10 +16910,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 1125883130}
-  STile: {fileID: 1408672405}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 0}
+  - {fileID: 1125883130}
+  - {fileID: 1408672405}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &2059955871
 SpriteRenderer:
@@ -17185,10 +17045,11 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 1145117587}
-  ATile: {fileID: 1470986859}
-  STile: {fileID: 712703089}
-  DTile: {fileID: 0}
+  directionalTiles:
+  - {fileID: 1145117587}
+  - {fileID: 1470986859}
+  - {fileID: 712703089}
+  - {fileID: 0}
   layer: 1
 --- !u!212 &2094164322
 SpriteRenderer:
@@ -17339,10 +17200,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1 &2124734860
 GameObject:
@@ -17442,10 +17300,7 @@ MonoBehaviour:
   assetData: {fileID: 0}
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
-  WTile: {fileID: 0}
-  ATile: {fileID: 0}
-  STile: {fileID: 0}
-  DTile: {fileID: 0}
+  directionalTiles: []
   layer: 0
 --- !u!1001 &2164157779858412991
 PrefabInstance:

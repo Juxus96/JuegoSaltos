@@ -49,10 +49,7 @@ public class LevelCreator : EditorWindow
         tileType = (TILETYPE)EditorGUILayout.EnumPopup("Tile type", tileType);
         if (tileType == TILETYPE.STAIRS)
             direction = (DIRECTION)EditorGUILayout.EnumPopup("Direction", direction);
-        if (GUILayout.Button("Confirm Change"))
-        {
-            SetTile();
-        }
+        
 
         tilePosition = EditorGUILayout.Vector2Field("TilePosition", tilePosition);
         UpdateTestTile();
@@ -138,23 +135,11 @@ public class LevelCreator : EditorWindow
         for (int i = 0; i < allTiles.Count; i++)
         {
             Tile tile = allTiles[i];
-            //Tile testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection);
-            tile.WTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection);//ConectionCheck(tile, testTile) ? testTile : null;
-
-            //testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection);
-            tile.ATile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection);//ConectionCheck(tile, testTile) ? testTile : null;
-
-            //            testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection);
-            tile.STile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection);// ConectionCheck(tile, testTile) ? testTile : null;
-
-            //          testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection);
-            tile.DTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection);// ConectionCheck(tile, testTile) ? testTile : null;
+            for (int j = 0; j < Helpers.Directions.Length; j++)
+            {
+                tile.directionalTiles[j] = GetTileByPos((Vector2)tile.transform.position + Helpers.Directions[j]);
+            }
         }
-    }
-
-    private bool ConectionCheck(Tile baseTile, Tile testTile)
-    {
-        return testTile != null && baseTile != null && testTile.layer == baseTile.layer;
     }
 
     private Tile GetTileByPos(Vector2 pos)

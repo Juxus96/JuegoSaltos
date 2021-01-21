@@ -10,10 +10,11 @@ public static class Helpers
     public static readonly int D = 3;
 
 
-    public static Vector2 WDirection = new Vector2(-0.6f,  0.3f);
-    public static Vector2 ADirection = new Vector2(-0.6f, -0.3f);
-    public static Vector2 SDirection = new Vector2( 0.6f, -0.3f);
-    public static Vector2 DDirection = new Vector2( 0.6f,  0.3f);
+    public static Vector2[] Directions = { new Vector2(-0.6f,  0.3f), 
+                                           new Vector2(-0.6f, -0.3f), 
+                                           new Vector2( 0.6f, -0.3f), 
+                                           new Vector2( 0.6f,  0.3f) 
+                                         };
 
     public static Vector2 OffsetBetTiles = new Vector2(0.6f, 0.3f);
 
