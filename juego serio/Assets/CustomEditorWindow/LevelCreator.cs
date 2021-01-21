@@ -80,7 +80,7 @@ public class LevelCreator : EditorWindow
 
         if (GUILayout.Button("Connect TIles"))
         {
-            ConnectTiles();
+            ConectTiles();
         }
 
         EditorGUILayout.Space();
@@ -112,7 +112,7 @@ public class LevelCreator : EditorWindow
             return;
         }
 
-        if (GetTileByPos(tilePosition) == null)
+        if (GetTileByPos(tilePosition + Vector2.up * layer * layerOffset) == null)
         {
             GameObject tile = Instantiate(tileToSpawn, levelBase);
             allTiles.Add(tile.GetComponent<Tile>());
@@ -123,7 +123,7 @@ public class LevelCreator : EditorWindow
         }
     }
 
-    private void ConnectTiles()
+    private void ConectTiles()
     {
         if (levelBase == null)
         {
@@ -138,18 +138,29 @@ public class LevelCreator : EditorWindow
         for (int i = 0; i < allTiles.Count; i++)
         {
             Tile tile = allTiles[i];
-            tile.WTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection);
-            tile.ATile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection);
-            tile.STile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection);
-            tile.DTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection);
+            //Tile testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection);
+            tile.WTile = GetTileByPos((Vector2)tile.transform.position + Helpers.WDirection);//ConectionCheck(tile, testTile) ? testTile : null;
+
+            //testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection);
+            tile.ATile = GetTileByPos((Vector2)tile.transform.position + Helpers.ADirection);//ConectionCheck(tile, testTile) ? testTile : null;
+
+            //            testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection);
+            tile.STile = GetTileByPos((Vector2)tile.transform.position + Helpers.SDirection);// ConectionCheck(tile, testTile) ? testTile : null;
+
+            //          testTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection);
+            tile.DTile = GetTileByPos((Vector2)tile.transform.position + Helpers.DDirection);// ConectionCheck(tile, testTile) ? testTile : null;
         }
     }
 
+    private bool ConectionCheck(Tile baseTile, Tile testTile)
+    {
+        return testTile != null && baseTile != null && testTile.layer == baseTile.layer;
+    }
 
     private Tile GetTileByPos(Vector2 pos)
     {
         int i = 0;
-        for (; i < allTiles.Count && Vector2.Distance((Vector2)allTiles[i].transform.position, pos) > 0.01f; i++) ;
+        for (; i < allTiles.Count && Vector2.Distance(allTiles[i].transform.position, pos) > 0.01f; i++) ;
         return i < allTiles.Count ? allTiles[i] : null;
 
     }
@@ -181,13 +192,15 @@ public class LevelCreator : EditorWindow
 
     private void UpdateTestTile()
     {
-        testTile.transform.position = tilePosition;
-        Debug.Log(tilePosition + Helpers.DDirection / 2);
-        bool freeSpace = GetTileByPos(tilePosition) == null &&
-            GetTileByPos(tilePosition + Vector2.up    * Helpers.OffsetBetTiles.y) == null &&
-            GetTileByPos(tilePosition + Vector2.down  * Helpers.OffsetBetTiles.y) == null &&
-            GetTileByPos(tilePosition + Vector2.right * Helpers.OffsetBetTiles.x) == null &&
-            GetTileByPos(tilePosition + Vector2.left  * Helpers.OffsetBetTiles.x) == null;
+        Vector2 testTilePos = testTile.transform.position = tilePosition + layer * Vector2.up * layerOffset;
+
+        bool freeSpace = GetTileByPos(testTile.transform.position) == null &&
+            GetTileByPos(testTilePos + Vector2.up * Helpers.OffsetBetTiles.y * 2) == null &&
+            GetTileByPos(testTilePos + Vector2.up * Helpers.OffsetBetTiles.y * 3) == null &&
+            GetTileByPos(testTilePos + Vector2.up    * Helpers.OffsetBetTiles.y) == null &&
+            GetTileByPos(testTilePos + Vector2.down  * Helpers.OffsetBetTiles.y) == null &&
+            GetTileByPos(testTilePos + Vector2.right * Helpers.OffsetBetTiles.x) == null &&
+            GetTileByPos(testTilePos + Vector2.left  * Helpers.OffsetBetTiles.x) == null;
         testTile.GetComponent<SpriteRenderer>().color = freeSpace? Color.green : Color.red;
     }
 
