@@ -135,9 +135,37 @@ public class LevelCreator : EditorWindow
         for (int i = 0; i < allTiles.Count; i++)
         {
             Tile tile = allTiles[i];
-            for (int j = 0; j < Helpers.Directions.Length; j++)
+            if (tile.GetType() == typeof(StairTile))
             {
-                tile.directionalTiles[j] = GetTileByPos((Vector2)tile.transform.position + Helpers.Directions[j]);
+                StairTile stairTile = (StairTile)tile;
+                Tile UpTile, downTile;
+                int upperTilePos, lowerTilePos;
+
+                if (stairTile.stairDirection == StairTile.DIRECTION.LEFT)
+                {
+                    upperTilePos = Helpers.W;
+                    lowerTilePos = Helpers.S;
+                }
+                else
+                {
+                    upperTilePos = Helpers.D;
+                    lowerTilePos = Helpers.A;
+                }
+
+                UpTile = GetTileByPos((Vector2)tile.transform.position + Helpers.Directions[upperTilePos]);
+                downTile = GetTileByPos((Vector2)tile.transform.position + Helpers.Directions[lowerTilePos] - Vector2.up * layerOffset);
+
+                UpTile.SetDirectionalTile(stairTile, lowerTilePos);
+                downTile.SetDirectionalTile(stairTile, upperTilePos);
+                stairTile.SetDirectionalTile(UpTile, upperTilePos);
+                stairTile.SetDirectionalTile(downTile, lowerTilePos);
+            }
+            else
+            {
+                for (int j = 0; j < Helpers.Directions.Length; j++)
+                {
+                    tile.SetDirectionalTile(GetTileByPos((Vector2)tile.transform.position + Helpers.Directions[j]), j);
+                }
             }
         }
     }

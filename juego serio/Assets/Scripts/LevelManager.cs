@@ -33,12 +33,12 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            enemyTurn = false;
-            playerMoving = true;
-            EventManager.instance.RaiseEvent("PlayerTurn");
-        }
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    enemyTurn = false;
+        //    playerMoving = true;
+        //    EventManager.instance.RaiseEvent("PlayerTurn");
+        //}
 
         //if(Input.GetKeyDown(KeyCode.M) && !enemyTurn)
         //{

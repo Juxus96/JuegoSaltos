@@ -35,8 +35,18 @@ public class TileManager : MonoBehaviour
     {
         Tile tile = GetTileByPos(position);
         int i = 0;
-        for (; i < Helpers.Directions.Length && !(tile.directionalTiles[i] != null && direction == Helpers.Directions[i]); i++) ;
-        return i < Helpers.Directions.Length ? (Vector2)tile.directionalTiles[i].transform.position : Vector2.up * int.MaxValue; 
+        for (; i < Helpers.Directions.Length && !(tile.GetDirectionalTile(i) != null && direction == Helpers.Directions[i]); i++) ;
+
+        if(i < Helpers.Directions.Length)
+        {
+            if(tile.GetDirectionalTile(i).GetType() == typeof(StairTile))
+            {
+                tile = tile.GetDirectionalTile(i);
+                //tile.SteppedIn();
+            }
+            return tile.GetDirectionalTile(i).transform.position;
+        }
+        return  Vector2.up * int.MaxValue; 
     }
 
 
@@ -64,7 +74,6 @@ public class TileManager : MonoBehaviour
     private void PointLightMoved(Vector2 position, int radius)
     {
         Tile baseTile = GetTileByPos(position);
-        tilesToUpdate.Add(baseTile);
         AddLightTile(baseTile, radius);
 
         UpdateTiles();
@@ -79,14 +88,20 @@ public class TileManager : MonoBehaviour
             Tile[] directionalTiles = new Tile[Helpers.Directions.Length];
             for (int i = 0; i < directionalTiles.Length; i++)
             {
-                directionalTiles[i] = baseTile.directionalTiles[i];
-                if (directionalTiles[i] != null && baseTile.layer == directionalTiles[i].layer)
+                directionalTiles[i] = baseTile.GetDirectionalTile(i);
+                if (directionalTiles[i] != null )
                 {
-                    if (!tilesToUpdate.Contains(directionalTiles[i]))
-                        tilesToUpdate.Add(directionalTiles[i]);
-                    AddLightTile(directionalTiles[i], radius);
+                    if(baseTile.layer == directionalTiles[i].layer || directionalTiles[i].GetType() == typeof(StairTile))
+                    {
+                        if (!tilesToUpdate.Contains(directionalTiles[i]))
+                            tilesToUpdate.Add(directionalTiles[i]);
+                        if(!(directionalTiles[i].GetType() == typeof(StairTile)))
+                            AddLightTile(directionalTiles[i], radius);
+                    }
+                    
                 }
             }
+
 
         }
     }

@@ -18,4 +18,14 @@ public class FloorTile : Tile
     {
         return true;
     }
+
+    public override Tile GetDirectionalTile(int i)
+    {
+        return directionalTiles[i];
+    }
+
+    public override void SetDirectionalTile(Tile tile, int dir)
+    {
+        directionalTiles[dir] = tile;
+    }
 }

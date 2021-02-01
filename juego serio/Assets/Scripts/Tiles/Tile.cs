@@ -20,7 +20,7 @@ public abstract class Tile : MonoBehaviour
 
     [SerializeField] protected Sprite lightSprite;
     [SerializeField] protected Sprite darkSprite;
-    [SerializeField] public Tile[] directionalTiles;
+    [SerializeField] protected Tile[] directionalTiles;
     public int layer;
     protected SpriteRenderer assetRenderer;
     protected SpriteRenderer spriteRenderer;
@@ -29,6 +29,8 @@ public abstract class Tile : MonoBehaviour
 
     public abstract bool Walkable(Vector2 from);
     public abstract void SteppedIn();
+    public abstract Tile GetDirectionalTile(int i);
+    public abstract void SetDirectionalTile(Tile tile, int dir);
 
     private void Awake()
     {
