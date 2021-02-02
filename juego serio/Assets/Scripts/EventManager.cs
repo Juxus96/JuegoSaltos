@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     private Dictionary<string, Action> voidAction;
     private Dictionary<string, Action<int>> intAction;
     private Dictionary<string, Action<Vector2>> vector2Action;
+    private Dictionary<string, Action<Vector2, Vector2>> vector2Vector2Action;
     private Dictionary<string, Action<Vector2, int>> vector2IntAction;
 
     private Dictionary<string, Func<Vector2, bool>> vector2FuncBool;
@@ -22,6 +23,7 @@ public class EventManager : MonoBehaviour
         voidAction = new Dictionary<string, Action>();
         intAction = new Dictionary<string, Action<int>>();
         vector2Action = new Dictionary<string, Action<Vector2>>();
+        vector2Vector2Action = new Dictionary<string, Action<Vector2, Vector2>>();
         vector2IntAction = new Dictionary<string, Action<Vector2, int>>();
         vector2FuncBool = new Dictionary<string, Func<Vector2, bool>>();
         vector2FuncVector2 = new Dictionary<string, Func<Vector2, Vector2>>();
@@ -97,6 +99,30 @@ public class EventManager : MonoBehaviour
     public void RaiseEvent(string key, Vector2 vector2)
     {
         vector2Action[key]?.Invoke(vector2);
+    }
+    #endregion
+
+    #region Vector2 Vector2 Action
+    public void SuscribeToEvent(string key, Action<Vector2, Vector2> answer)
+    {
+        if (!vector2Vector2Action.ContainsKey(key))
+        {
+            vector2Vector2Action.Add(key, answer);
+        }
+        else
+            vector2Vector2Action[key] += answer;
+
+    }
+
+    public void UnsuscribeFromEvent(string key, Action<Vector2, Vector2> answer)
+    {
+        if (vector2Vector2Action.ContainsKey(key))
+            vector2Vector2Action[key] -= answer;
+    }
+
+    public void RaiseEvent(string key, Vector2 vector2, Vector2 v2)
+    {
+        vector2Vector2Action[key]?.Invoke(vector2, v2);
     }
     #endregion
 

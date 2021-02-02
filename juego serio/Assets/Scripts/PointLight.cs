@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PointLight : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int radius;
+
     private void Start()
     {
         EventManager.instance.SuscribeToEvent("GetLights", GetPointLight);
 
     }
 
-
     private void GetPointLight()
     {
-        EventManager.instance.RaiseEvent("LightMoved", transform.position, 1);
+        EventManager.instance.RaiseEvent("LightMoved", transform.position, radius);
     }
 }

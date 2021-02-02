@@ -118,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
                 // Updates the tiles beneath the light 
                 EventManager.instance.RaiseEvent("UpdateLight");
+                moving = false;
             }
 
         }
