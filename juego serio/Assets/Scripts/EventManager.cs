@@ -13,6 +13,7 @@ public class EventManager : MonoBehaviour
     private Dictionary<string, Action<Vector2, Vector2>> vector2Vector2Action;
     private Dictionary<string, Action<Vector2, int>> vector2IntAction;
 
+    private Dictionary<string, Func<Transform>> transformFunc;
     private Dictionary<string, Func<Vector2, bool>> vector2FuncBool;
     private Dictionary<string, Func<Vector2, Vector2>> vector2FuncVector2;
     private Dictionary<string, Func<Vector2, Vector2, Vector2>> vector2Vector2FuncVector2;
@@ -25,6 +26,7 @@ public class EventManager : MonoBehaviour
         vector2Action = new Dictionary<string, Action<Vector2>>();
         vector2Vector2Action = new Dictionary<string, Action<Vector2, Vector2>>();
         vector2IntAction = new Dictionary<string, Action<Vector2, int>>();
+        transformFunc = new Dictionary<string, Func<Transform>>();
         vector2FuncBool = new Dictionary<string, Func<Vector2, bool>>();
         vector2FuncVector2 = new Dictionary<string, Func<Vector2, Vector2>>();
         vector2Vector2FuncVector2 = new Dictionary<string, Func<Vector2, Vector2, Vector2>>();
@@ -150,6 +152,32 @@ public class EventManager : MonoBehaviour
     }
     #endregion
 
+    #region Func Transform
+    public void SuscribeToTransformEvent(string key, Func<Transform> answer)
+    {
+        if (!transformFunc.ContainsKey(key))
+        {
+            transformFunc.Add(key, answer);
+        }
+        else
+            transformFunc[key] += answer;
+    }
+
+    public void UnsuscribeFromTransformEvent(string key, Func<Transform> answer)
+    {
+        if (transformFunc.ContainsKey(key))
+            transformFunc[key] -= answer;
+    }
+
+    public Transform RaiseTransformEvent(string key)
+    {
+        if (transformFunc != null)
+            return transformFunc[key]();
+        else
+            return null;
+    }
+    #endregion
+
     #region Vector2 Func Bool
     public void SuscribeToBoolEvent(string key, Func<Vector2, bool> answer)
     {
@@ -202,7 +230,7 @@ public class EventManager : MonoBehaviour
     }
     #endregion
 
-    #region Vector2 Func Bool
+    #region Vector2 Vector2 Func Bool
     public void SuscribeToVect2Event(string key, Func<Vector2, Vector2> answer)
     {
         if (!vector2FuncVector2.ContainsKey(key))

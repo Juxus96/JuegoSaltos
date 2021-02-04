@@ -70,8 +70,6 @@ public abstract class Tile : MonoBehaviour
 
     protected void CreateAsset()
     {
-        GameObject go = Instantiate(new GameObject(assetData.assetName), transform);
-        assetRenderer = go.AddComponent<SpriteRenderer>();
-        assetRenderer.transform.position += Vector3.up * assetData.assetOffset;
+        GameObject go = Instantiate(new GameObject(), transform);
     }
 }

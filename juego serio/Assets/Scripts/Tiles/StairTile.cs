@@ -9,6 +9,7 @@ public class StairTile : Tile
         LEFT,
         RIGHT
     }
+    public DIRECTION stairDirection;
 
     private bool recentlyUsed;
 
@@ -17,7 +18,6 @@ public class StairTile : Tile
         EventManager.instance.SuscribeToEvent("StairUsed", () => recentlyUsed = false); ;
     }
 
-    public DIRECTION stairDirection;
     public override Tile GetDirectionalTile(int i)
     {
         return directionalTiles[i];

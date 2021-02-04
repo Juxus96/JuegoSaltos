@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
         EventManager.instance.SuscribeToEvent("PlayerTurn", PlayerTurn);
         EventManager.instance.SuscribeToEvent("GetLights", GetPlayerLight);
-
+        EventManager.instance.SuscribeToTransformEvent("GetPlayer", () => playerTransform);
 
         EventManager.instance.SuscribeToEvent("Input_W", () => { SetDirection(Helpers.W); });
         EventManager.instance.SuscribeToEvent("Input_A", () => { SetDirection(Helpers.A); });
@@ -71,9 +71,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 followMode = true;
                 lightTransform.position = playerTransform.position;
-                CheckPlayerTile();
                 EventManager.instance.RaiseEvent("PlayerVisuals");
                 EventManager.instance.RaiseEvent("UpdateLight");
+                CheckPlayerTile();
             }
         }
         else if (targetDir != Vector2.zero)
@@ -85,13 +85,17 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         if (lightTurn)
+        {
             lightTransform.position = targetPos;
+            EventManager.instance.RaiseEvent("UpdateLight");
+        }
         else
         {
             playerTransform.Translate(targetDir * Time.deltaTime);
             if(followMode)
             {
                 lightTransform.position = targetPos;
+                EventManager.instance.RaiseEvent("UpdateLight");
 
             }
         }
@@ -102,9 +106,10 @@ public class PlayerMovement : MonoBehaviour
             movingTransform.position = targetPos;
             targetPos = targetDir = Vector3.zero;
 
-            EventManager.instance.RaiseEvent("CheckTile", movingTransform.position);
-            if(!lightTurn)
+            if (!lightTurn)
                 CheckPlayerTile();
+
+            EventManager.instance.RaiseEvent("CheckTile", movingTransform.position);
 
         }
     }
@@ -156,13 +161,10 @@ public class PlayerMovement : MonoBehaviour
         if(lightTurn)
         {
             EventManager.instance.RaiseEvent("LightVisuals");
-            EventManager.instance.RaiseEvent("UpdateLight");
         }
         else
         {
             EventManager.instance.RaiseEvent("PlayerVisuals");
-            if(followMode)
-                EventManager.instance.RaiseEvent("UpdateLight");
         }
 
 

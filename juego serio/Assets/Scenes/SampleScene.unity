@@ -1649,19 +1649,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 152785210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d25373e8fa1634ba6c2ee82a6c7ea8, type: 3}
+  m_Script: {fileID: 11500000, guid: 42765fb1117b6c8468d0e0620ce8e240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tileType: 0
   assetData: {fileID: 0}
-  lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
-  darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
+  lightSprite: {fileID: 21300000, guid: ba3f6deca18d13a4d84341cc93fc343d, type: 3}
+  darkSprite: {fileID: 21300000, guid: 726aa1a64b63d2543a858aa84b8ac81a, type: 3}
   directionalTiles:
   - {fileID: 0}
-  - {fileID: 751903469}
+  - {fileID: 0}
   - {fileID: 397973254}
   - {fileID: 0}
   layer: 0
+  tpDirection: 1
+  otherTp: {fileID: 2059955870}
 --- !u!212 &152785213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5770,7 +5772,7 @@ MonoBehaviour:
   - {fileID: 499540292}
   - {fileID: 755962075}
   - {fileID: 1367521367}
-  - {fileID: 152785212}
+  - {fileID: 0}
   layer: 0
 --- !u!212 &751903470
 SpriteRenderer:
@@ -6412,7 +6414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &806209496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13049,7 +13051,7 @@ MonoBehaviour:
   lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
   darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
   directionalTiles:
-  - {fileID: 2059955870}
+  - {fileID: 0}
   - {fileID: 898836663}
   - {fileID: 962706198}
   - {fileID: 1331915333}
@@ -17177,19 +17179,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2059955868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d25373e8fa1634ba6c2ee82a6c7ea8, type: 3}
+  m_Script: {fileID: 11500000, guid: 42765fb1117b6c8468d0e0620ce8e240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tileType: 0
   assetData: {fileID: 0}
-  lightSprite: {fileID: 21300000, guid: 90b200ed36a2f194cbd44c8fd0d947f6, type: 3}
-  darkSprite: {fileID: 21300000, guid: d47608f1eea93024199e8bb53ac141db, type: 3}
+  lightSprite: {fileID: 21300000, guid: ba3f6deca18d13a4d84341cc93fc343d, type: 3}
+  darkSprite: {fileID: 21300000, guid: 726aa1a64b63d2543a858aa84b8ac81a, type: 3}
   directionalTiles:
   - {fileID: 0}
   - {fileID: 1125883130}
-  - {fileID: 1408672405}
+  - {fileID: 0}
   - {fileID: 0}
   layer: 0
+  tpDirection: 0
+  otherTp: {fileID: 152785212}
 --- !u!212 &2059955871
 SpriteRenderer:
   m_ObjectHideFlags: 0
