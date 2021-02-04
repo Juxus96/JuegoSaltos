@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private MovementData lightMoveData;
 
     private int turnsInTheDark;
+    private Transform movingTransform;
 
     private Vector2 targetDir;
     private Vector2 targetPos;
@@ -25,10 +26,9 @@ public class PlayerMovement : MonoBehaviour
         lightMoveData.Init(lightTransform);
 
         startPos = lightTransform.position;
+        movingTransform = playerTransform;
 
-        EventManager.instance.SuscribeToEvent("PlayerTurn", () => { moving = false; lightTurn = false; });
-        EventManager.instance.SuscribeToEvent("PlayerInDark", () => PlayerInTheDark());
-        EventManager.instance.SuscribeToEvent("PlayerSafe", () => turnsInTheDark = 0);
+        EventManager.instance.SuscribeToEvent("PlayerTurn", PlayerTurn);
         EventManager.instance.SuscribeToEvent("GetLights", GetPlayerLight);
 
 
@@ -49,18 +49,21 @@ public class PlayerMovement : MonoBehaviour
                     if (startPos != (Vector2)lightTransform.position)
                     {
                         // Move the enemies
+                        CheckPlayerTile();
                     }
                     lightTurn = false;
-                    EventManager.instance.RaiseEvent("PlayerTurn");
+                    movingTransform = playerTransform;
                     startPos = lightTransform.position;
+                    EventManager.instance.RaiseEvent("PlayerVisuals");
 
                 }
                 else
                 {
                     lightTurn = true;
+                    movingTransform = lightTransform;
                     followMode = false;
-                    EventManager.instance.RaiseEvent("LightTurn");
                     startPos = lightTransform.position;
+                    EventManager.instance.RaiseEvent("LightVisuals");
 
                 }
             }
@@ -68,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 followMode = true;
                 lightTransform.position = playerTransform.position;
-                EventManager.instance.RaiseEvent("PlayerTurn");
+                CheckPlayerTile();
+                EventManager.instance.RaiseEvent("PlayerVisuals");
                 EventManager.instance.RaiseEvent("UpdateLight");
             }
         }
@@ -95,31 +99,12 @@ public class PlayerMovement : MonoBehaviour
         //Reset on reaching the target pos
         if (Vector3.Distance((lightTurn ? lightTransform : playerTransform).position, targetPos) < 0.01f)
         {
-
-            EventManager.instance.RaiseEvent("MovementUpdate");
-
-
-            (lightTurn ? lightTransform : playerTransform).position = targetPos;
+            movingTransform.position = targetPos;
             targetPos = targetDir = Vector3.zero;
 
-
-            // if the player isnt moving the light end his turn
+            EventManager.instance.RaiseEvent("CheckTile", movingTransform.position);
             if(!lightTurn)
-            {
-                EventManager.instance.RaiseEvent("PlayerTurn");
-                if(followMode)
-                    EventManager.instance.RaiseEvent("UpdateLight");
-
-            }
-            else
-            {
-                // Makes the arrows appear again
-                EventManager.instance.RaiseEvent("LightTurn");
-
-                // Updates the tiles beneath the light 
-                EventManager.instance.RaiseEvent("UpdateLight");
-                moving = false;
-            }
+                CheckPlayerTile();
 
         }
     }
@@ -129,8 +114,8 @@ public class PlayerMovement : MonoBehaviour
         if (!moving && (lightTurn ? lightMoveData : playerMoveData).canMove[direction])
         {
             moving = true;
-            targetPos = EventManager.instance.RaiseVect2Event("CheckTileMovement", (lightTurn ? lightTransform : playerTransform).position, Helpers.Directions[direction]);
-            targetDir = targetPos - (Vector2)(lightTurn ? lightTransform : playerTransform).position;
+            targetPos = EventManager.instance.RaiseVect2Event("CheckTileMovement", movingTransform.position, Helpers.Directions[direction]);
+            targetDir = targetPos - (Vector2)movingTransform.position;
 
             targetDir.Normalize();
 
@@ -140,18 +125,46 @@ public class PlayerMovement : MonoBehaviour
     }
    
 
-    private void PlayerInTheDark()
+    private void CheckPlayerTile()
     {
-        if(++turnsInTheDark > maxTurnsInTheDark)
+        if(EventManager.instance.RaiseBoolEvent("PlayerTileCheck", playerTransform.position))
         {
-            EventManager.instance.RaiseEvent("PlayerDied");
+            if(++turnsInTheDark >= maxTurnsInTheDark)
+            {
+                turnsInTheDark = 0;
+                lightTurn = false;
+                movingTransform = playerTransform;
+                EventManager.instance.RaiseEvent("PlayerDied");
+                EventManager.instance.RaiseEvent("PlayerVisuals");
+            }
+        }
+        else
+        {
             turnsInTheDark = 0;
-            lightTurn = false;
         }
     }
 
     private void GetPlayerLight()
     {
         EventManager.instance.RaiseEvent("LightMoved", lightTransform.position, lightRadius);
+    }
+
+    private void PlayerTurn()
+    {
+        moving = false;
+
+        if(lightTurn)
+        {
+            EventManager.instance.RaiseEvent("LightVisuals");
+            EventManager.instance.RaiseEvent("UpdateLight");
+        }
+        else
+        {
+            EventManager.instance.RaiseEvent("PlayerVisuals");
+            if(followMode)
+                EventManager.instance.RaiseEvent("UpdateLight");
+        }
+
+
     }
 }

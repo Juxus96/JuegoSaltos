@@ -27,7 +27,6 @@ public abstract class Tile : MonoBehaviour
     protected bool discovered;
 
 
-    public abstract bool Walkable(Vector2 from);
     public abstract void SteppedIn();
     public abstract Tile GetDirectionalTile(int i);
     public abstract void SetDirectionalTile(Tile tile, int dir);
@@ -62,6 +61,11 @@ public abstract class Tile : MonoBehaviour
             spriteRenderer.sprite = darkSprite;
         }
 
+    }
+
+    public bool IsDark()
+    {
+        return tileState == TileState.DARK;
     }
 
     protected void CreateAsset()

@@ -34,11 +34,6 @@ public class StairTile : Tile
         recentlyUsed = true;
     }
 
-    public override bool Walkable(Vector2 from)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public new void SetState(TileState newState)
     {
         base.SetState(recentlyUsed ? TileState.LIGHT : newState);

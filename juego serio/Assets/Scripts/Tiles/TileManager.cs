@@ -18,8 +18,12 @@ public class TileManager : MonoBehaviour
         EventManager.instance.SuscribeToEvent("UpdateLight", UpdateLight);
         EventManager.instance.SuscribeToEvent("LightMoved", PointLightMoved);
         EventManager.instance.SuscribeToEvent("RayActivated", RayLightMoved);
+
+        EventManager.instance.SuscribeToEvent("CheckTile", CheckCurrentTile);
+
+        EventManager.instance.SuscribeToBoolEvent("PlayerTileCheck", (Vector2 v) => GetTileByPos(v).IsDark());
+
         EventManager.instance.SuscribeToVect2Event("CheckTileMovement", CheckTileToMove);
-        EventManager.instance.SuscribeToVect2Event("GetTilePos", GetTIlePos);
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -27,10 +31,6 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    private Vector2 GetTIlePos(Vector2 tilePos)
-    {
-        return Vector2.zero;
-    }
 
     // Changes the boolean in the movement data
     private Vector2 CheckTileToMove(Vector2 position, Vector2 direction)
@@ -51,6 +51,10 @@ public class TileManager : MonoBehaviour
         return Vector2.up * int.MaxValue;
     }
 
+    private void CheckCurrentTile(Vector2 position)
+    {
+        GetTileByPos(position).SteppedIn();
+    }
 
     private Tile GetTileByPos(Vector2 pos)
     {

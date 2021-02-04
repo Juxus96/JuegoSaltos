@@ -15673,7 +15673,7 @@ MonoBehaviour:
   lightTransform: {fileID: 272757290}
   playerTransform: {fileID: 2060944111}
   lightRadius: 2
-  maxTurnsInTheDark: 400
+  maxTurnsInTheDark: 3
   playerMoveData: {fileID: 11400000, guid: 9e157619e0c72144a9d29c2b64a74802, type: 2}
   lightMoveData: {fileID: 11400000, guid: a8c0d37d79fd6d34583630841fa9a4e2, type: 2}
 --- !u!114 &1850468005

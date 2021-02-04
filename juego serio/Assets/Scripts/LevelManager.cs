@@ -8,16 +8,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform lightSource;
 
-    private bool playerMoving;
-    private bool enemyTurn;
 
     private void Start()
     {
-        playerMoving = true;
-        enemyTurn = false;
         Invoke("ResetLevel",0.1f);
         EventManager.instance.SuscribeToEvent("PlayerDied", ResetLevel);
-        EventManager.instance.SuscribeToEvent("PlayerAction", () => { enemyTurn = true; });
         
     }
 
